@@ -2,61 +2,45 @@ const API_URL = "https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc4
 
 const form = document.getElementById("contactForm");
 
-if (form) {
+form.addEventListener("submit", async function (e) {
 
-    form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-        e.preventDefault();
+    const botao = form.querySelector("button");
 
-        const botao = form.querySelector("button");
+    botao.disabled = true;
+    botao.innerHTML = "Enviando...";
 
-        botao.disabled = true;
-        botao.innerText = "Enviando...";
+    const dados = {
+        nome: document.getElementById("nome").value,
+        whatsapp: document.getElementById("whatsapp").value,
+        email: document.getElementById("email").value,
+        motivo: document.getElementById("motivo").value,
+        mensagem: document.getElementById("mensagem").value,
+        origem: "Site"
+    };
 
-        const dados = {
-            nome: document.getElementById("nome").value,
-            whatsapp: document.getElementById("whatsapp").value,
-            email: document.getElementById("email").value,
-            motivo: document.getElementById("motivo").value,
-            mensagem: document.getElementById("mensagem").value,
-            origem: "Site"
-        };
+    try {
 
-        try {
+        await fetch(API_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: JSON.stringify(dados)
+        });
 
-            const resposta = await fetch(API_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
-            });
+        alert("Solicitação enviada com sucesso!");
 
-            const json = await resposta.json();
+        form.reset();
 
-            if (json.success) {
+    } catch (erro) {
 
-                alert("Solicitação enviada com sucesso!");
+        console.error(erro);
 
-                form.reset();
+        alert("Não foi possível conectar ao servidor.");
 
-            } else {
+    }
 
-                alert("Erro ao enviar a solicitação.");
+    botao.disabled = false;
+    botao.innerHTML = "Solicitar Contato";
 
-            }
-
-        } catch (erro) {
-
-            console.error(erro);
-
-            alert("Erro de conexão com o servidor.");
-
-        }
-
-        botao.disabled = false;
-        botao.innerText = "Solicitar Contato";
-
-    });
-
-}
+});
