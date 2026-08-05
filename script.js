@@ -1,343 +1,1038 @@
-/* ==========================================
-   DR. GABRIEL VINÍCIUS
-   SCRIPT.JS
-========================================== */
+/*
+=========================================================
+Dr. Gabriel Vinícius
+script.js
+Versão 1.0
+=========================================================
+*/
 
-const API_URL = "https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc44DCJEQW5w1l3KHWfp7l3twTJ-e1GwqFxsfPjB8k7bUyW/exec";
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ==========================================
-   HEADER
-========================================== */
+    /*
+    =========================================================
+    ELEMENTOS
+    =========================================================
+    */
 
-const header = document.querySelector("header");
+    const body = document.body;
 
-window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
 
-    if (!header) return;
+    const menuToggle = document.querySelector(".menu-toggle");
 
-    if (window.scrollY > 50) {
+    const navigation = document.querySelector(".nav");
 
-        header.classList.add("header-scroll");
+    const navLinks = document.querySelectorAll(".nav a");
 
-    } else {
+    const sections = document.querySelectorAll("main section[id]");
 
-        header.classList.remove("header-scroll");
+    const floatingButton = document.querySelector(".floating-cta");
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    const reviewCards = document.querySelectorAll(".review");
+
+    const form = document.querySelector("#contactForm");
+
+    const whatsappInput = document.querySelector("#whatsapp");
+
+    /*
+    =========================================================
+    MENU MOBILE
+    =========================================================
+    */
+
+    function openMenu() {
+
+        navigation.classList.add("active");
+
+        menuToggle.classList.add("active");
+
+        body.classList.add("menu-open");
+
+        menuToggle.setAttribute("aria-expanded", "true");
 
     }
 
-});
+    function closeMenu() {
 
-/* ==========================================
-   ANIMAÇÃO DAS SEÇÕES
-========================================== */
+        navigation.classList.remove("active");
 
-const observer = new IntersectionObserver((entries) => {
+        menuToggle.classList.remove("active");
 
-    entries.forEach(entry => {
+        body.classList.remove("menu-open");
 
-        if (entry.isIntersecting) {
+        menuToggle.setAttribute("aria-expanded", "false");
 
-            entry.target.classList.add("show");
+    }
 
-        }
+    function toggleMenu() {
 
-    });
+        if (navigation.classList.contains("active")) {
 
-}, {
-
-    threshold: 0.15
-
-});
-
-document.querySelectorAll("section").forEach(section => {
-
-    observer.observe(section);
-
-});
-
-/* ==========================================
-   SCROLL SUAVE
-========================================== */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const destino = document.querySelector(this.getAttribute("href"));
-
-        if(destino){
-
-            destino.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-    });
-
-});
-
-/* ==========================================
-   FORMULÁRIO
-========================================== */
-
-const form = document.getElementById("contactForm");
-
-if(form){
-
-form.addEventListener("submit", async function(e){
-
-e.preventDefault();
-
-const botao = form.querySelector("button");
-
-botao.disabled = true;
-
-const textoOriginal = botao.innerHTML;
-
-botao.innerHTML = "Enviando...";
-
-const dados = {
-
-nome: document.getElementById("nome").value,
-
-whatsapp: document.getElementById("whatsapp").value,
-
-email: document.getElementById("email").value,
-
-motivo: document.getElementById("motivo").value,
-
-mensagem: document.getElementById("mensagem").value,
-
-origem: "Site"
-
-};
-
-try{
-
-await fetch(API_URL,{
-
-method:"POST",
-
-mode:"no-cors",
-
-body:JSON.stringify(dados)
-
-});
-
-form.reset();
-
-mostrarMensagem(
-
-"✅ Solicitação enviada com sucesso! Em breve entrarei em contato.",
-
-true
-
-);
-
-if(typeof gtag==="function"){
-
-gtag("event","generate_lead",{
-
-event_category:"Contato",
-
-event_label:"Formulario"
-
-});
-
-}
-
-}catch(erro){
-
-console.error(erro);
-
-mostrarMensagem(
-
-"❌ Não foi possível enviar sua solicitação. Tente novamente.",
-
-false
-
-);
-
-}
-
-botao.disabled=false;
-
-botao.innerHTML=textoOriginal;
-
-});
-
-}
-
-/* ==========================================
-   MENSAGEM
-========================================== */
-
-function mostrarMensagem(texto,sucesso){
-
-let caixa=document.getElementById("mensagemSite");
-
-if(!caixa){
-
-caixa=document.createElement("div");
-
-caixa.id="mensagemSite";
-
-caixa.style.marginTop="25px";
-
-document.querySelector(".contact-form").appendChild(caixa);
-
-}
-
-caixa.innerHTML=texto;
-
-caixa.style.padding="18px";
-
-caixa.style.borderRadius="12px";
-
-caixa.style.fontWeight="600";
-
-caixa.style.textAlign="center";
-
-caixa.style.transition=".3s";
-
-if(sucesso){
-
-caixa.style.background="#DCFCE7";
-
-caixa.style.color="#166534";
-
-}else{
-
-caixa.style.background="#FEE2E2";
-
-caixa.style.color="#991B1B";
-
-}
-
-setTimeout(()=>{
-
-caixa.style.opacity="0";
-
-setTimeout(()=>{
-
-caixa.remove();
-
-},500);
-
-},5000);
-
-}
-/* ==========================================
-   MÁSCARA WHATSAPP
-========================================== */
-
-const whatsapp = document.getElementById("whatsapp");
-
-if (whatsapp) {
-
-    whatsapp.addEventListener("input", function () {
-
-        let valor = this.value.replace(/\D/g, "");
-
-        if (valor.length > 11) {
-
-            valor = valor.substring(0, 11);
-
-        }
-
-        if (valor.length > 10) {
-
-            valor = valor.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+            closeMenu();
 
         } else {
 
-            valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+            openMenu();
 
         }
 
-        this.value = valor;
+    }
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", toggleMenu);
+
+    }
+
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", closeMenu);
 
     });
 
-}
+    document.addEventListener("click", event => {
 
-/* ==========================================
-   MENU ATIVO
-========================================== */
+        if (!navigation) return;
 
-const secoes = document.querySelectorAll("section[id]");
-const links = document.querySelectorAll("nav a");
+        const insideNav = navigation.contains(event.target);
 
-window.addEventListener("scroll", () => {
+        const insideButton = menuToggle.contains(event.target);
 
-    let scroll = window.scrollY + 150;
+        if (
 
-    secoes.forEach(secao => {
+            navigation.classList.contains("active") &&
 
-        const topo = secao.offsetTop;
-        const altura = secao.offsetHeight;
-        const id = secao.getAttribute("id");
+            !insideNav &&
 
-        if (scroll >= topo && scroll < topo + altura) {
+            !insideButton
 
-            links.forEach(link => {
+        ) {
 
-                link.classList.remove("active");
+            closeMenu();
 
-                if (link.getAttribute("href") === "#" + id) {
+        }
 
-                    link.classList.add("active");
+    });
+
+    document.addEventListener("keydown", event => {
+
+        if (
+
+            event.key === "Escape" &&
+
+            navigation.classList.contains("active")
+
+        ) {
+
+            closeMenu();
+
+        }
+
+    });
+
+    /*
+    =========================================================
+    HEADER
+    =========================================================
+    */
+
+    function updateHeader() {
+
+        if (!header) return;
+
+        if (window.scrollY > 40) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+
+    window.addEventListener("scroll", updateHeader);
+
+    updateHeader();
+
+    /*
+    =========================================================
+    SCROLL SUAVE
+    =========================================================
+    */
+
+    navLinks.forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const href = link.getAttribute("href");
+
+            if (!href.startsWith("#")) return;
+
+            event.preventDefault();
+
+            const target = document.querySelector(href);
+
+            if (!target) return;
+
+            const offset = header.offsetHeight;
+
+            const position =
+
+                target.getBoundingClientRect().top +
+
+                window.pageYOffset -
+
+                offset;
+
+            window.scrollTo({
+
+                top: position,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    });
+
+    /*
+    =========================================================
+    MENU ATIVO
+    =========================================================
+    */
+
+    function updateActiveMenu() {
+
+        const scroll =
+
+            window.scrollY +
+
+            header.offsetHeight +
+
+            120;
+
+        sections.forEach(section => {
+
+            const top = section.offsetTop;
+
+            const bottom = top + section.offsetHeight;
+
+            const id = section.id;
+
+            const link = document.querySelector(
+
+                `.nav a[href="#${id}"]`
+
+            );
+
+            if (!link) return;
+
+            if (scroll >= top && scroll < bottom) {
+
+                navLinks.forEach(item =>
+
+                    item.classList.remove("active")
+
+                );
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+    window.addEventListener("scroll", updateActiveMenu);
+
+    updateActiveMenu();
+
+    /*
+    =========================================================
+    CONTINUA NA PARTE 2
+    =========================================================
+    */
+
+});
+
+    /*
+    =========================================================
+    FAQ ACCORDION
+    =========================================================
+    */
+
+    function initFaq() {
+
+        if (!faqItems.length) return;
+
+        faqItems.forEach(item => {
+
+            const question = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+
+            if (!question || !answer) return;
+
+            question.setAttribute("aria-expanded", "false");
+
+            answer.style.maxHeight = "0px";
+
+            question.addEventListener("click", () => {
+
+                const opened = item.classList.contains("active");
+
+                faqItems.forEach(faq => {
+
+                    faq.classList.remove("active");
+
+                    const q = faq.querySelector(".faq-question");
+                    const a = faq.querySelector(".faq-answer");
+
+                    if (q) q.setAttribute("aria-expanded", "false");
+
+                    if (a) a.style.maxHeight = "0px";
+
+                });
+
+                if (!opened) {
+
+                    item.classList.add("active");
+
+                    question.setAttribute("aria-expanded", "true");
+
+                    answer.style.maxHeight =
+                        answer.scrollHeight + "px";
 
                 }
 
             });
 
+        });
+
+    }
+
+    /*
+    =========================================================
+    BOTÃO FLUTUANTE
+    =========================================================
+    */
+
+    function initFloatingButton() {
+
+        if (!floatingButton) return;
+
+        function updateFloatingButton() {
+
+            if (window.scrollY > 450) {
+
+                floatingButton.classList.add("show");
+
+            } else {
+
+                floatingButton.classList.remove("show");
+
+            }
+
+        }
+
+        updateFloatingButton();
+
+        window.addEventListener("scroll", updateFloatingButton);
+
+        floatingButton.addEventListener("click", () => {
+
+            const section =
+                document.querySelector("#agendamento");
+
+            if (!section) return;
+
+            const offset = header.offsetHeight;
+
+            const position =
+                section.getBoundingClientRect().top +
+                window.pageYOffset -
+                offset;
+
+            window.scrollTo({
+
+                top: position,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+    /*
+    =========================================================
+    ANIMAÇÕES
+    =========================================================
+    */
+
+    function initAnimations() {
+
+        if (!("IntersectionObserver" in window)) return;
+
+        const elements = document.querySelectorAll(
+
+            ".card, .hero-content, .hero-image, .section-title"
+
+        );
+
+        const observer = new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+
+                threshold: 0.15
+
+            }
+
+        );
+
+        elements.forEach(element => {
+
+            element.classList.add("hidden");
+
+            observer.observe(element);
+
+        });
+
+    }
+
+    /*
+    =========================================================
+    CARROSSEL DAS AVALIAÇÕES
+    =========================================================
+    */
+
+    function initReviews() {
+
+        if (reviewCards.length <= 1) return;
+
+        let current = 0;
+
+        function showReview(index) {
+
+            reviewCards.forEach((card, i) => {
+
+                card.classList.toggle(
+
+                    "active",
+
+                    i === index
+
+                );
+
+            });
+
+        }
+
+        showReview(current);
+
+        setInterval(() => {
+
+            current++;
+
+            if (current >= reviewCards.length) {
+
+                current = 0;
+
+            }
+
+            showReview(current);
+
+        }, 6000);
+
+    }
+
+    /*
+    =========================================================
+    INICIALIZAÇÃO
+    =========================================================
+    */
+
+    initFaq();
+
+    initFloatingButton();
+
+    initAnimations();
+
+    initReviews();
+
+    /*
+    =========================================================
+    CONTINUA NA PARTE 3
+    =========================================================
+    */
+
+    /*
+    =========================================================
+    FORMULÁRIO PREMIUM
+    =========================================================
+    */
+
+    function showFieldError(input, message) {
+
+        removeFieldError(input);
+
+        input.classList.add("input-error");
+
+        const error = document.createElement("small");
+
+        error.className = "field-error";
+
+        error.textContent = message;
+
+        input.parentNode.appendChild(error);
+
+    }
+
+    function removeFieldError(input) {
+
+        input.classList.remove("input-error");
+
+        input.classList.remove("input-success");
+
+        const error = input.parentNode.querySelector(".field-error");
+
+        if (error) {
+
+            error.remove();
+
+        }
+
+    }
+
+    function validateEmail(email) {
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    }
+
+    function phoneMask(value) {
+
+        value = value.replace(/\D/g, "");
+
+        value = value.substring(0,11);
+
+        if(value.length > 10){
+
+            value = value.replace(
+
+                /^(\d{2})(\d{5})(\d{4}).*/,
+
+                "($1) $2-$3"
+
+            );
+
+        }
+
+        else if(value.length > 6){
+
+            value = value.replace(
+
+                /^(\d{2})(\d{4})(\d+)/,
+
+                "($1) $2-$3"
+
+            );
+
+        }
+
+        else if(value.length > 2){
+
+            value = value.replace(
+
+                /^(\d{2})(\d+)/,
+
+                "($1) $2"
+
+            );
+
+        }
+
+        return value;
+
+    }
+
+    if (whatsappInput) {
+
+        whatsappInput.addEventListener("input", e => {
+
+            e.target.value = phoneMask(e.target.value);
+
+        });
+
+    }
+
+    /*
+    =========================================================
+    TOAST
+    =========================================================
+    */
+
+    function showToast(message) {
+
+        const toast = document.createElement("div");
+
+        toast.className = "toast";
+
+        toast.textContent = message;
+
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+
+            toast.classList.add("show");
+
+        },50);
+
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+            setTimeout(()=>{
+
+                toast.remove();
+
+            },300);
+
+        },3000);
+
+    }
+
+    /*
+    =========================================================
+    ENVIO
+    =========================================================
+    */
+
+    function initForm(){
+
+        if(!form) return;
+
+        form.addEventListener("submit",(event)=>{
+
+            event.preventDefault();
+
+            const nome = form.nome;
+
+            const whatsapp = form.whatsapp;
+
+            const email = form.email;
+
+            const mensagem = form.mensagem;
+
+            [nome,whatsapp,email,mensagem].forEach(removeFieldError);
+
+            let valid = true;
+
+            if(nome.value.trim().length < 3){
+
+                showFieldError(nome,"Informe seu nome.");
+
+                valid = false;
+
+            }else{
+
+                nome.classList.add("input-success");
+
+            }
+
+            if(
+
+                whatsapp.value.replace(/\D/g,"").length < 10
+
+            ){
+
+                showFieldError(
+
+                    whatsapp,
+
+                    "WhatsApp inválido."
+
+                );
+
+                valid = false;
+
+            }else{
+
+                whatsapp.classList.add("input-success");
+
+            }
+
+            if(
+
+                email.value.trim()!=="" &&
+
+                !validateEmail(email.value)
+
+            ){
+
+                showFieldError(
+
+                    email,
+
+                    "E-mail inválido."
+
+                );
+
+                valid = false;
+
+            }else{
+
+                if(email.value.trim()!==""){
+
+                    email.classList.add("input-success");
+
+                }
+
+            }
+
+            if(mensagem.value.trim().length < 10){
+
+                showFieldError(
+
+                    mensagem,
+
+                    "Descreva melhor sua mensagem."
+
+                );
+
+                valid = false;
+
+            }else{
+
+                mensagem.classList.add("input-success");
+
+            }
+
+            if(!valid){
+
+                return;
+
+            }
+
+            const button = form.querySelector("button");
+
+            const original = button.innerHTML;
+
+            button.disabled = true;
+
+            button.innerHTML = "Enviando...";
+
+            setTimeout(()=>{
+
+                form.reset();
+
+                document
+
+                .querySelectorAll(".input-success")
+
+                .forEach(input=>{
+
+                    input.classList.remove("input-success");
+
+                });
+
+                button.disabled = false;
+
+                button.innerHTML = original;
+
+                showToast("Mensagem enviada com sucesso!");
+
+            },1500);
+
+        });
+
+    }
+
+    /*
+    =========================================================
+    LUCIDE
+    =========================================================
+    */
+
+    if(window.lucide){
+
+        lucide.createIcons();
+
+    }
+
+    /*
+    =========================================================
+    INICIALIZAÇÃO
+    =========================================================
+    */
+
+    initForm();
+
+    /*
+    =========================================================
+    MELHORIAS PREMIUM
+    =========================================================
+    */
+
+    /*
+    =========================================================
+    HEADER INTELIGENTE
+    =========================================================
+    */
+
+    let lastScroll = 0;
+
+    function smartHeader() {
+
+        if (!header) return;
+
+        const current = window.pageYOffset;
+
+        if (current <= 20) {
+
+            header.classList.remove("hide");
+
+            lastScroll = current;
+
+            return;
+
+        }
+
+        if (current > lastScroll && current > 120) {
+
+            header.classList.add("hide");
+
+        } else {
+
+            header.classList.remove("hide");
+
+        }
+
+        lastScroll = current;
+
+    }
+
+    window.addEventListener("scroll", smartHeader);
+
+    /*
+    =========================================================
+    FECHAR MENU AO REDIMENSIONAR
+    =========================================================
+    */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 992) {
+
+            closeMenu();
+
         }
 
     });
 
-});
+    /*
+    =========================================================
+    REVEAL EM CASCATA
+    =========================================================
+    */
 
-/* ==========================================
-   HOVER DOS CARDS
-========================================== */
+    document.querySelectorAll(".cards-grid").forEach(grid => {
 
-document.querySelectorAll(".service-card").forEach(card => {
+        [...grid.children].forEach((card, index) => {
 
-    card.addEventListener("mouseenter", () => {
+            card.style.transitionDelay = `${index * 120}ms`;
 
-        card.style.transform = "translateY(-8px)";
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform = "translateY(0)";
+        });
 
     });
 
+    /*
+    =========================================================
+    RESPEITAR ACESSIBILIDADE
+    =========================================================
+    */
+
+    if (
+
+        window.matchMedia(
+
+            "(prefers-reduced-motion: reduce)"
+
+        ).matches
+
+    ) {
+
+        document.documentElement.classList.add(
+
+            "reduce-motion"
+
+        );
+
+    }
+
+    /*
+    =========================================================
+    PRELOAD DA IMAGEM PRINCIPAL
+    =========================================================
+    */
+
+    const heroImage = document.querySelector(".hero-image img");
+
+    if (heroImage) {
+
+        heroImage.fetchPriority = "high";
+
+        heroImage.loading = "eager";
+
+        heroImage.decoding = "async";
+
+    }
+
+    /*
+    =========================================================
+    DEBOUNCE
+    =========================================================
+    */
+
+    function debounce(callback, delay = 80) {
+
+        let timer;
+
+        return (...args) => {
+
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+
+                callback(...args);
+
+            }, delay);
+
+        };
+
+    }
+
+    window.addEventListener(
+
+        "scroll",
+
+        debounce(() => {
+
+            updateHeader();
+
+            updateActiveMenu();
+
+        })
+
+    );
+
+    /*
+    =========================================================
+    SWIPE NAS AVALIAÇÕES
+    =========================================================
+    */
+
+    if (reviewCards.length > 1) {
+
+        let startX = 0;
+
+        let currentReview = 0;
+
+        function showReview(index) {
+
+            reviewCards.forEach((card, i) => {
+
+                card.classList.toggle(
+
+                    "active",
+
+                    i === index
+
+                );
+
+            });
+
+        }
+
+        reviewCards.forEach(card => {
+
+            card.addEventListener("touchstart", event => {
+
+                startX = event.changedTouches[0].clientX;
+
+            });
+
+            card.addEventListener("touchend", event => {
+
+                const endX = event.changedTouches[0].clientX;
+
+                const distance = endX - startX;
+
+                if (Math.abs(distance) < 50) return;
+
+                if (distance < 0) {
+
+                    currentReview++;
+
+                } else {
+
+                    currentReview--;
+
+                }
+
+                if (currentReview >= reviewCards.length) {
+
+                    currentReview = 0;
+
+                }
+
+                if (currentReview < 0) {
+
+                    currentReview = reviewCards.length - 1;
+
+                }
+
+                showReview(currentReview);
+
+            });
+
+        });
+
+    }
+
+    /*
+    =========================================================
+    LOG
+    =========================================================
+    */
+
+    console.info(
+
+        "%cSite carregado com sucesso",
+
+        "color:#0D3B66;font-size:14px;font-weight:bold"
+
+    );
+
 });
-
-/* ==========================================
-   ANO AUTOMÁTICO
-========================================== */
-
-const copyright = document.querySelector(".copyright");
-
-if (copyright) {
-
-    copyright.innerHTML =
-        `© ${new Date().getFullYear()} Dr. Gabriel Vinícius • Todos os direitos reservados.`;
-
-}
-
-/* ==========================================
-   CONSOLE
-========================================== */
-
-console.log("Site carregado com sucesso.");
