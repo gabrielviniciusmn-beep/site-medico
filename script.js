@@ -2,66 +2,61 @@ const API_URL = "https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc4
 
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", async function(e){
+if (form) {
 
-    e.preventDefault();
+    form.addEventListener("submit", async function (e) {
 
-    const botao = form.querySelector("button");
+        e.preventDefault();
 
-    botao.disabled = true;
-    botao.innerHTML = "Enviando...";
+        const botao = form.querySelector("button");
 
-    const dados = {
+        botao.disabled = true;
+        botao.innerText = "Enviando...";
 
-        nome: document.getElementById("nome").value,
+        const dados = {
+            nome: document.getElementById("nome").value,
+            whatsapp: document.getElementById("whatsapp").value,
+            email: document.getElementById("email").value,
+            motivo: document.getElementById("motivo").value,
+            mensagem: document.getElementById("mensagem").value,
+            origem: "Site"
+        };
 
-        whatsapp: document.getElementById("whatsapp").value,
+        try {
 
-        email: document.getElementById("email").value,
+            const resposta = await fetch(API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            });
 
-        motivo: document.getElementById("motivo").value,
+            const json = await resposta.json();
 
-        mensagem: document.getElementById("mensagem").value,
+            if (json.success) {
 
-        origem: "Site"
+                alert("Solicitação enviada com sucesso!");
 
-    };
+                form.reset();
 
-    try{
+            } else {
 
-        const resposta = await fetch(API_URL,{
+                alert("Erro ao enviar a solicitação.");
 
-            method:"POST",
+            }
 
-            headers:{
-                "Content-Type":"application/json"
-            },
+        } catch (erro) {
 
-            body:JSON.stringify(dados)
+            console.error(erro);
 
-        });
-
-        const json = await resposta.json();
-
-        if(json.success){
-
-            alert("Solicitação enviada com sucesso!");
-
-            form.reset();
-
-        }else{
-
-            alert("Erro ao enviar.");
+            alert("Erro de conexão com o servidor.");
 
         }
 
-    }catch(e){
+        botao.disabled = false;
+        botao.innerText = "Solicitar Contato";
 
-        alert("Não foi possível conectar ao servidor.");
+    });
 
-    }
-
-    botao.disabled=false;
-    botao.innerHTML="Solicitar Contato";
-
-});
+}
