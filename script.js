@@ -10,45 +10,47 @@ const API_URL =
    HEADER
 ========================================== */
 
-window.addEventListener("scroll",()=>{
+const header = document.querySelector(".header");
 
-const header=document.querySelector("header");
+window.addEventListener("scroll", () => {
 
-if(window.scrollY>50){
+    if (window.scrollY > 40) {
 
-header.style.boxShadow="0 12px 30px rgba(0,0,0,.08)";
+        header.style.boxShadow = "0 12px 35px rgba(0,0,0,.08)";
+        header.style.background = "rgba(255,255,255,.98)";
 
-}else{
+    } else {
 
-header.style.boxShadow="0 2px 20px rgba(0,0,0,.05)";
+        header.style.boxShadow = "0 2px 20px rgba(0,0,0,.05)";
+        header.style.background = "rgba(255,255,255,.95)";
 
-}
+    }
 
 });
 
 /* ==========================================
-   ANIMAÇÃO
+   ANIMAÇÃO DAS SEÇÕES
 ========================================== */
 
-const observer=new IntersectionObserver(entries=>{
+const observer = new IntersectionObserver((entries) => {
 
-entries.forEach(entry=>{
+    entries.forEach(entry => {
 
-if(entry.isIntersecting){
+        if (entry.isIntersecting) {
 
-entry.target.classList.add("show");
+            entry.target.classList.add("show");
 
-}
+        }
 
+    });
+
+}, {
+    threshold: .15
 });
 
-},{
-threshold:.15
-});
+document.querySelectorAll("section").forEach(section => {
 
-document.querySelectorAll("section").forEach(sec=>{
-
-observer.observe(sec);
+    observer.observe(section);
 
 });
 
@@ -56,179 +58,24 @@ observer.observe(sec);
    SCROLL SUAVE
 ========================================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-link.addEventListener("click",function(e){
+    link.addEventListener("click", function (e) {
 
-e.preventDefault();
+        e.preventDefault();
 
-const destino=document.querySelector(this.getAttribute("href"));
+        const destino = document.querySelector(this.getAttribute("href"));
 
-if(destino){
+        if (destino) {
 
-destino.scrollIntoView({
+            destino.scrollIntoView({
 
-behavior:"smooth"
+                behavior: "smooth"
 
-});
+            });
 
-}
+        }
 
-});
-
-});
-
-/* ==========================================
-   FORMULÁRIO
-========================================== */
-
-const form=document.getElementById("contactForm");
-
-if(form){
-
-form.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-const botao=form.querySelector("button");
-
-botao.disabled=true;
-
-botao.innerHTML="Enviando...";
-
-const dados={
-
-nome:document.getElementById("nome").value,
-
-whatsapp:document.getElementById("whatsapp").value,
-
-email:document.getElementById("email").value,
-
-motivo:document.getElementById("motivo").value,
-
-mensagem:document.getElementById("mensagem").value,
-
-origem:"Site"
-
-};
-
-try{
-
-await fetch(API_URL,{
-
-method:"POST",
-
-mode:"no-cors",
-
-body:JSON.stringify(dados)
+    });
 
 });
-
-form.reset();
-
-mostrarMensagem(
-"Solicitação enviada com sucesso!",
-true
-);
-
-if(typeof gtag==="function"){
-
-gtag("event","lead",{
-
-event_category:"Formulario",
-
-event_label:"Contato"
-
-});
-
-}
-
-}catch(e){
-
-mostrarMensagem(
-"Erro ao enviar. Tente novamente.",
-false
-);
-
-}
-
-botao.disabled=false;
-
-botao.innerHTML="Solicitar Contato";
-
-});
-
-}
-
-/* ==========================================
-   MENSAGEM
-========================================== */
-
-function mostrarMensagem(texto,sucesso){
-
-let caixa=document.getElementById("mensagemSite");
-
-if(!caixa){
-
-caixa=document.createElement("div");
-
-caixa.id="mensagemSite";
-
-document.querySelector(".contato .container")
-.appendChild(caixa);
-
-}
-
-caixa.innerHTML=texto;
-
-caixa.style.marginTop="25px";
-
-caixa.style.padding="18px";
-
-caixa.style.borderRadius="12px";
-
-caixa.style.fontWeight="600";
-
-caixa.style.textAlign="center";
-
-if(sucesso){
-
-caixa.style.background="#DCFCE7";
-
-caixa.style.color="#166534";
-
-}else{
-
-caixa.style.background="#FEE2E2";
-
-caixa.style.color="#991B1B";
-
-}
-
-}
-
-/* ==========================================
-   WHATSAPP
-========================================== */
-
-const whatsapp=document.getElementById("whatsapp");
-
-if(whatsapp){
-
-whatsapp.addEventListener("input",function(){
-
-let v=this.value.replace(/\D/g,"");
-
-v=v.replace(/^(\d{2})(\d)/g,"($1) $2");
-
-v=v.replace(/(\d{5})(\d)/,"$1-$2");
-
-this.value=v;
-
-});
-
-}
-
-/* ==========================================
-   FIM
-========================================== */
