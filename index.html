@@ -5,76 +5,160 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge">
 
 <title>
 Dr. Gabriel Vinícius | Consulta Médica Online | CRM-GO 40886
 </title>
 
 <meta
-name="description"
-content="Consulta médica online para pacientes de todo o Brasil. Atendimento humanizado, baseado em evidências e realizado exclusivamente por telemedicina.">
+    name="description"
+    content="Consulta médica online para pacientes de todo o Brasil. Atendimento humanizado, telemedicina segura e medicina baseada em evidências.">
 
 <meta
-name="robots"
-content="index,follow">
+    name="keywords"
+    content="teleconsulta, médico online, consulta médica online, clínico geral, receita digital, telemedicina">
 
 <meta
-name="author"
-content="Dr. Gabriel Vinícius">
+    name="author"
+    content="Dr. Gabriel Vinícius">
 
 <meta
-name="theme-color"
-content="#0D3B66">
+    name="robots"
+    content="index,follow">
 
 <meta
-property="og:type"
-content="website">
+    name="theme-color"
+    content="#0D3B66">
 
 <meta
-property="og:title"
-content="Dr. Gabriel Vinícius">
-
-<meta
-property="og:description"
-content="Consulta médica online para todo o Brasil.">
-
-<meta
-property="og:image"
-content="assets/dr-gabriel.webp">
-
-<meta
-property="og:locale"
-content="pt_BR">
-
-<link rel="canonical" href="https://SEU-DOMINIO.com.br/">
-
-<link rel="icon" href="assets/favicon.ico">
-
-<link rel="manifest" href="manifest.json">
+    name="color-scheme"
+    content="light">
 
 <link
-rel="preconnect"
-href="https://fonts.googleapis.com">
+    rel="canonical"
+    href="https://SEU-DOMINIO.com.br/">
+
+<!-- =======================
+OPEN GRAPH
+======================= -->
+
+<meta
+    property="og:type"
+    content="website">
+
+<meta
+    property="og:locale"
+    content="pt_BR">
+
+<meta
+    property="og:title"
+    content="Dr. Gabriel Vinícius">
+
+<meta
+    property="og:description"
+    content="Consulta médica online para pacientes de todo o Brasil.">
+
+<meta
+    property="og:image"
+    content="https://SEU-DOMINIO.com.br/assets/og-image.webp">
+
+<meta
+    property="og:url"
+    content="https://SEU-DOMINIO.com.br">
+
+<!-- =======================
+TWITTER
+======================= -->
+
+<meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="Dr. Gabriel Vinícius">
+
+<meta
+    name="twitter:description"
+    content="Consulta médica online para todo o Brasil.">
+
+<meta
+    name="twitter:image"
+    content="https://SEU-DOMINIO.com.br/assets/og-image.webp">
+
+<!-- =======================
+FAVICON
+======================= -->
 
 <link
-rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    rel="icon"
+    href="assets/favicon.ico">
 
 <link
-href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+    rel="apple-touch-icon"
+    href="assets/apple-touch-icon.png">
 
 <link
-rel="stylesheet"
-href="style.css">
+    rel="manifest"
+    href="manifest.json">
+
+<!-- =======================
+FONTES
+======================= -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<!-- =======================
+CSS
+======================= -->
+
+<link
+    rel="stylesheet"
+    href="style.css">
+
+<!-- =======================
+LUCIDE
+======================= -->
 
 <script
-src="https://unpkg.com/lucide@latest">
+    src="https://unpkg.com/lucide@latest">
 </script>
 
-<!-- Schema.org -->
+<!-- =======================
+GOOGLE TAG MANAGER
+(ADICIONAREMOS O ID)
+======================= -->
+
+<!-- Google Tag Manager -->
+
+<!-- =======================
+GOOGLE ANALYTICS 4
+(ADICIONAREMOS O ID)
+======================= -->
+
+<!-- Google Analytics -->
+
+<!-- =======================
+SCHEMA.ORG
+======================= -->
 
 <script type="application/ld+json">
 
@@ -83,18 +167,13 @@ src="https://unpkg.com/lucide@latest">
 "@type":"Physician",
 "name":"Dr. Gabriel Vinícius",
 "medicalSpecialty":"GeneralPractice",
-"image":"https://SEU-DOMINIO.com.br/assets/dr-gabriel.webp",
-"url":"https://SEU-DOMINIO.com.br",
-"telephone":"",
 "address":{
 "@type":"PostalAddress",
 "addressCountry":"BR"
 },
-"areaServed":"BR",
-"availableService":{
-"@type":"MedicalTherapy",
-"name":"Teleconsulta"
-}
+"areaServed":"Brasil",
+"url":"https://SEU-DOMINIO.com.br",
+"image":"https://SEU-DOMINIO.com.br/assets/og-image.webp"
 }
 
 </script>
@@ -102,6 +181,8 @@ src="https://unpkg.com/lucide@latest">
 </head>
 
 <body>
+
+<!-- Google Tag Manager (noscript) -->
 
 <header class="header">
 
@@ -128,7 +209,7 @@ CRM-GO 40886
 </a>
 
 <nav
-id="menu-principal"
+id="menu"
 class="nav">
 
 <a href="#sobre">
@@ -146,6 +227,12 @@ Diferenciais
 <a href="#como-funciona">
 
 Como funciona
+
+</a>
+
+<a href="#agendamento">
+
+Agendamento
 
 </a>
 
@@ -171,7 +258,7 @@ Contato
 
 <a
 href="#agendamento"
-class="btn-primary">
+class="btn btn-primary desktop-only">
 
 Agendar consulta
 
@@ -181,7 +268,7 @@ Agendar consulta
 class="menu-toggle"
 aria-label="Abrir menu"
 aria-expanded="false"
-aria-controls="menu-principal">
+aria-controls="menu">
 
 <i data-lucide="menu"></i>
 
@@ -193,17 +280,25 @@ aria-controls="menu-principal">
 
 </header>
 
-<main>
+<main><!-- =====================================================
+HERO
+===================================================== -->
 
 <section
 id="inicio"
 class="hero">
 
-<div class="container hero-grid">
+<div class="container">
+
+<div class="hero-grid">
+
+<!-- TEXTO -->
 
 <div class="hero-content">
 
 <span class="hero-label">
+
+<i data-lucide="monitor-smartphone"></i>
 
 Teleconsulta para pacientes de todo o Brasil
 
@@ -212,14 +307,16 @@ Teleconsulta para pacientes de todo o Brasil
 <h1>
 
 Consulta médica online
-com atendimento humanizado
-e baseado em evidências.
+com atendimento
+humanizado.
 
 </h1>
 
 <p>
 
-Atendimento exclusivamente por telemedicina, proporcionando praticidade, segurança e cuidado individualizado para pacientes em todo o Brasil.
+Atendimento exclusivamente por telemedicina, com foco na escuta qualificada,
+medicina baseada em evidências e cuidado individualizado para pacientes de
+todo o território nacional.
 
 </p>
 
@@ -227,7 +324,7 @@ Atendimento exclusivamente por telemedicina, proporcionando praticidade, seguran
 
 <a
 href="#agendamento"
-class="btn-primary">
+class="btn btn-primary">
 
 Agendar consulta
 
@@ -235,7 +332,7 @@ Agendar consulta
 
 <a
 href="#sobre"
-class="btn-secondary">
+class="btn btn-secondary">
 
 Conheça o médico
 
@@ -273,37 +370,67 @@ Avaliações públicas verificadas.
 
 <div class="highlight">
 
-<i data-lucide="monitor-smartphone"></i>
-
-<span>
-
-Teleconsulta
-
-</span>
-
-</div>
-
-<div class="highlight">
-
 <i data-lucide="file-text"></i>
 
-<span>
+<div>
 
-Receitas Digitais*
+<h3>
 
-</span>
+Receita Digital
+
+</h3>
+
+<p>
+
+Quando houver indicação clínica.
+
+</p>
+
+</div>
 
 </div>
 
 <div class="highlight">
 
-<i data-lucide="clipboard"></i>
+<i data-lucide="clipboard-list"></i>
 
-<span>
+<div>
 
-Solicitação de Exames*
+<h3>
 
-</span>
+Solicitação de Exames
+
+</h3>
+
+<p>
+
+Sempre baseada na avaliação médica.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="highlight">
+
+<i data-lucide="shield-check"></i>
+
+<div>
+
+<h3>
+
+Consulta Segura
+
+</h3>
+
+<p>
+
+Privacidade e confidencialidade.
+
+</p>
+
+</div>
 
 </div>
 
@@ -311,39 +438,59 @@ Solicitação de Exames*
 
 <i data-lucide="heart-handshake"></i>
 
-<span>
+<div>
+
+<h3>
 
 Atendimento Humanizado
 
-</span>
+</h3>
+
+<p>
+
+Escuta qualificada e cuidado individualizado.
+
+</p>
 
 </div>
 
 </div>
 
-<small>
-
-* Quando houver indicação clínica.
-
-</small>
+</div>
 
 </div>
+
+<!-- FOTO -->
 
 <div class="hero-image">
 
 <img
-src="assets/dr-gabriel.png"
+
+src="assets/dr-gabriel.webp"
+
 alt="Dr. Gabriel Vinícius"
+
+width="620"
+
+height="760"
+
 loading="eager"
-decoding="async"
-width="520"
-height="650">
+
+fetchpriority="high"
+
+decoding="async">
+
+</div>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- =====================================================
+TRUST BAR
+===================================================== -->
 
 <section class="trust">
 
@@ -353,33 +500,73 @@ height="650">
 
 <div class="trust-item">
 
-<h3>★★★★★</h3>
+<i data-lucide="star"></i>
 
-<p>Avaliações verificadas</p>
+<strong>
 
-</div>
+★★★★★
 
-<div class="trust-item">
+</strong>
 
-<h3>100%</h3>
+<span>
 
-<p>Teleconsulta</p>
+Avaliações verificadas
 
-</div>
-
-<div class="trust-item">
-
-<h3>CRM-GO</h3>
-
-<p>40886</p>
+</span>
 
 </div>
 
 <div class="trust-item">
 
-<h3>Brasil</h3>
+<i data-lucide="badge-check"></i>
 
-<p>Atendimento nacional</p>
+<strong>
+
+CRM-GO
+
+</strong>
+
+<span>
+
+40886
+
+</span>
+
+</div>
+
+<div class="trust-item">
+
+<i data-lucide="globe"></i>
+
+<strong>
+
+Brasil
+
+</strong>
+
+<span>
+
+Atendimento nacional
+
+</span>
+
+</div>
+
+<div class="trust-item">
+
+<i data-lucide="monitor-smartphone"></i>
+
+<strong>
+
+100%
+
+</strong>
+
+<span>
+
+Telemedicina
+
+</span>
 
 </div>
 
@@ -387,36 +574,67 @@ height="650">
 
 </div>
 
-</section>
+</section><!-- =====================================================
+SOBRE
+===================================================== -->
 
-<section id="sobre">
+<section
+id="sobre"
+class="about">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-header">
 
-<span>SOBRE</span>
+<span class="section-label">
+
+Sobre
+
+</span>
 
 <h2>
 
-Um atendimento centrado na pessoa,
-com ética, ciência e cuidado.
+Uma medicina baseada
+na confiança, ciência
+e cuidado individualizado.
 
 </h2>
 
 <p>
 
-Cada consulta é conduzida com escuta qualificada, respeito à individualidade do paciente e decisões fundamentadas nas melhores evidências científicas disponíveis.
+Cada consulta é conduzida com atenção às necessidades do paciente,
+escuta qualificada e decisões fundamentadas nas melhores evidências
+científicas disponíveis.
 
 </p>
 
 </div>
 
-<div class="cards-grid">
+<div class="about-grid">
 
-<article class="card">
+<div class="about-image">
+
+<img
+
+src="assets/dr-gabriel-consulta.webp"
+
+alt="Dr. Gabriel Vinícius durante atendimento"
+
+loading="lazy"
+
+width="580"
+
+height="680">
+
+</div>
+
+<div class="about-content">
+
+<div class="about-card">
 
 <i data-lucide="heart-handshake"></i>
+
+<div>
 
 <h3>
 
@@ -426,15 +644,20 @@ Atendimento Humanizado
 
 <p>
 
-Escuta atenta, acolhimento e cuidado individualizado durante toda a consulta.
+Cada paciente recebe um atendimento individualizado,
+com acolhimento e respeito às suas necessidades.
 
 </p>
 
-</article>
+</div>
 
-<article class="card">
+</div>
+
+<div class="about-card">
 
 <i data-lucide="book-open"></i>
+
+<div>
 
 <h3>
 
@@ -444,25 +667,237 @@ Medicina Baseada em Evidências
 
 <p>
 
-Condutas fundamentadas nas melhores evidências científicas.
+Condutas clínicas fundamentadas nas recomendações
+científicas mais atuais.
 
 </p>
 
-</article>
+</div>
 
-<article class="card">
+</div>
+
+<div class="about-card">
 
 <i data-lucide="shield-check"></i>
 
+<div>
+
 <h3>
 
-Privacidade e Segurança
+Segurança e Privacidade
 
 </h3>
 
 <p>
 
-Consulta realizada em ambiente seguro e confidencial.
+Consultas realizadas em ambiente seguro,
+garantindo confidencialidade das informações.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="about-card">
+
+<i data-lucide="monitor-smartphone"></i>
+
+<div>
+
+<h3>
+
+Teleconsulta em Todo o Brasil
+
+</h3>
+
+<p>
+
+Atendimento médico online para pacientes
+de qualquer estado brasileiro.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section><!-- =====================================================
+DIFERENCIAIS
+===================================================== -->
+
+<section
+id="diferenciais"
+class="features">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-label">
+
+Diferenciais
+
+</span>
+
+<h2>
+
+Por que realizar sua consulta
+com o Dr. Gabriel Vinícius?
+
+</h2>
+
+<p>
+
+Uma experiência médica planejada para oferecer qualidade,
+segurança e praticidade durante toda a consulta.
+
+</p>
+
+</div>
+
+<div class="features-grid">
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="stethoscope"></i>
+
+</div>
+
+<h3>
+
+Consulta Individualizada
+
+</h3>
+
+<p>
+
+Cada atendimento é realizado de forma personalizada,
+considerando a história clínica, sintomas e necessidades
+de cada paciente.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="shield-check"></i>
+
+</div>
+
+<h3>
+
+Segurança
+
+</h3>
+
+<p>
+
+Atendimento realizado conforme as normas do Conselho Federal
+de Medicina, com total confidencialidade das informações.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="brain-circuit"></i>
+
+</div>
+
+<h3>
+
+Atualização Científica
+
+</h3>
+
+<p>
+
+Condutas fundamentadas em medicina baseada em evidências,
+seguindo recomendações científicas atuais.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="clock-3"></i>
+
+</div>
+
+<h3>
+
+Praticidade
+
+</h3>
+
+<p>
+
+Realize sua consulta sem deslocamentos,
+diretamente do conforto da sua casa.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="file-check-2"></i>
+
+</div>
+
+<h3>
+
+Documentos Digitais
+
+</h3>
+
+<p>
+
+Quando clinicamente indicados, receitas, solicitações de exames,
+atestados e outros documentos poderão ser emitidos em formato digital.
+
+</p>
+
+</article>
+
+<article class="feature-card">
+
+<div class="feature-icon">
+
+<i data-lucide="messages-square"></i>
+
+</div>
+
+<h3>
+
+Comunicação Clara
+
+</h3>
+
+<p>
+
+Explicações objetivas, linguagem acessível e espaço para que todas
+as dúvidas sejam esclarecidas durante a consulta.
 
 </p>
 
@@ -472,868 +907,1211 @@ Consulta realizada em ambiente seguro e confidencial.
 
 </div>
 
-</section><section id="diferenciais">
+</section><!-- =====================================================
+COMO FUNCIONA
+===================================================== -->
 
-    <div class="container">
+<section
+id="como-funciona"
+class="process">
 
-        <div class="section-title">
+<div class="container">
 
-            <span>DIFERENCIAIS</span>
+<div class="section-header">
 
-            <h2>
+<span class="section-label">
 
-                Um atendimento pensado para oferecer confiança, praticidade e qualidade.
+Como funciona
 
-            </h2>
+</span>
 
-            <p>
+<h2>
 
-                Atendimento exclusivamente por telemedicina com foco na experiência do paciente e nas melhores evidências científicas.
+Sua consulta online
+em apenas quatro etapas.
 
-            </p>
+</h2>
 
-        </div>
+<p>
 
-        <div class="cards-grid">
+O atendimento foi pensado para ser simples, seguro e confortável,
+desde o agendamento até a emissão de documentos médicos quando houver indicação clínica.
 
-            <article class="card">
+</p>
 
-                <i data-lucide="monitor-smartphone"></i>
+</div>
 
-                <h3>
+<div class="process-grid">
 
-                    Consulta 100% online
+<article class="process-card">
 
-                </h3>
+<div class="process-number">
 
-                <p>
+01
 
-                    Atendimento médico para pacientes em qualquer lugar do Brasil.
+</div>
 
-                </p>
+<div class="process-icon">
 
-            </article>
+<i data-lucide="calendar-days"></i>
 
-            <article class="card">
+</div>
 
-                <i data-lucide="stethoscope"></i>
+<h3>
 
-                <h3>
+Agendamento
 
-                    Atendimento individualizado
+</h3>
 
-                </h3>
+<p>
 
-                <p>
+Escolha o melhor horário disponível e realize o agendamento da consulta de forma rápida e prática.
 
-                    Cada consulta é conduzida respeitando sua história clínica e suas necessidades.
+</p>
 
-                </p>
+</article>
 
-            </article>
+<article class="process-card">
 
-            <article class="card">
+<div class="process-number">
 
-                <i data-lucide="book-open"></i>
+02
 
-                <h3>
+</div>
 
-                    Medicina baseada em evidências
+<div class="process-icon">
 
-                </h3>
+<i data-lucide="video"></i>
 
-                <p>
+</div>
 
-                    Condutas fundamentadas em conhecimento científico atualizado.
+<h3>
 
-                </p>
+Teleconsulta
 
-            </article>
+</h3>
 
-            <article class="card">
+<p>
 
-                <i data-lucide="file-text"></i>
+No horário marcado, a consulta é realizada por videochamada em ambiente seguro e com total privacidade.
 
-                <h3>
+</p>
 
-                    Documentos digitais
+</article>
 
-                </h3>
+<article class="process-card">
 
-                <p>
+<div class="process-number">
 
-                    Receitas, atestados e solicitações de exames quando houver indicação clínica.
+03
 
-                </p>
+</div>
 
-            </article>
+<div class="process-icon">
 
-            <article class="card">
+<i data-lucide="stethoscope"></i>
 
-                <i data-lucide="shield-check"></i>
+</div>
 
-                <h3>
+<h3>
 
-                    Segurança e privacidade
+Avaliação Médica
 
-                </h3>
+</h3>
 
-                <p>
+<p>
 
-                    Atendimento realizado em ambiente seguro e confidencial.
+Durante a consulta são avaliados sintomas, histórico clínico e exames disponíveis para definição da melhor conduta.
 
-                </p>
+</p>
 
-            </article>
+</article>
 
-            <article class="card">
+<article class="process-card">
 
-                <i data-lucide="clock-3"></i>
+<div class="process-number">
 
-                <h3>
+04
 
-                    Mais praticidade
+</div>
 
-                </h3>
+<div class="process-icon">
 
-                <p>
+<i data-lucide="file-check-2"></i>
 
-                    Consulte-se sem deslocamentos, economizando tempo e mantendo a qualidade do atendimento.
+</div>
 
-                </p>
+<h3>
 
-            </article>
+Documentos Digitais
 
-        </div>
+</h3>
 
-    </div>
+<p>
 
-</section>
+Quando clinicamente indicados, receitas, atestados, solicitações de exames e orientações poderão ser emitidos em formato digital.
 
-<section id="como-funciona">
+</p>
 
-    <div class="container">
+</article>
 
-        <div class="section-title">
+</div>
 
-            <span>COMO FUNCIONA</span>
+<div class="process-footer">
 
-            <h2>
+<p>
 
-                Agendar sua consulta é simples.
+<i data-lucide="shield-check"></i>
 
-            </h2>
+As teleconsultas seguem as normas vigentes do Conselho Federal de Medicina e utilizam plataformas seguras para proteção das informações do paciente.
 
-            <p>
+</p>
 
-                Todo o processo acontece online de forma rápida e segura.
+</div>
 
-            </p>
+</div>
 
-        </div>
+</section><!-- =====================================================
+AGENDAMENTO
+===================================================== -->
 
-        <div class="timeline">
+<section
+id="agendamento"
+class="appointment">
 
-            <article class="card step">
+<div class="container">
 
-                <div class="step-number">01</div>
+<div class="appointment-grid">
 
-                <h3>
+<!-- TEXTO -->
 
-                    Agende
+<div class="appointment-content">
 
-                </h3>
+<span class="section-label">
 
-                <p>
+Agendamento
 
-                    Escolha o melhor horário disponível diretamente pela Doctoralia.
+</span>
 
-                </p>
+<h2>
 
-            </article>
+Agende sua consulta
+com segurança e praticidade.
 
-            <article class="card step">
+</h2>
 
-                <div class="step-number">02</div>
+<p>
 
-                <h3>
+O agendamento é realizado pela plataforma Doctoralia,
+permitindo escolher o melhor horário disponível para sua
+teleconsulta de forma rápida e segura.
 
-                    Confirmação
+</p>
 
-                </h3>
+<div class="appointment-benefits">
 
-                <p>
+<div class="benefit">
 
-                    Receba todas as orientações para acessar sua teleconsulta.
+<i data-lucide="calendar-check-2"></i>
 
-                </p>
+<span>
 
-            </article>
+Agendamento online em poucos minutos.
 
-            <article class="card step">
+</span>
 
-                <div class="step-number">03</div>
+</div>
 
-                <h3>
+<div class="benefit">
 
-                    Teleconsulta
+<i data-lucide="clock-3"></i>
 
-                </h3>
+<span>
 
-                <p>
+Escolha o horário mais conveniente.
 
-                    Converse comigo por vídeo em ambiente seguro e reservado.
+</span>
 
-                </p>
+</div>
 
-            </article>
+<div class="benefit">
 
-            <article class="card step">
+<i data-lucide="video"></i>
 
-                <div class="step-number">04</div>
+<span>
 
-                <h3>
+Consulta médica por videochamada.
 
-                    Continuidade do cuidado
+</span>
 
-                </h3>
+</div>
 
-                <p>
+<div class="benefit">
 
-                    Quando indicado, receba documentos digitais e orientações para o acompanhamento.
+<i data-lucide="shield-check"></i>
 
-                </p>
+<span>
 
-            </article>
+Plataforma segura e protegida.
 
-        </div>
+</span>
 
-    </div>
+</div>
 
-</section>
+<div class="benefit">
 
-<section id="agendamento">
+<i data-lucide="file-check-2"></i>
 
-    <div class="container">
+<span>
 
-        <div class="doctoralia-grid">
+Receitas, atestados e solicitações de exames quando houver indicação clínica.
 
-            <div class="doctoralia-content">
+</span>
 
-                <div class="section-title">
+</div>
 
-                    <span>AGENDAMENTO</span>
+</div>
 
-                    <h2>
+<div class="appointment-buttons">
 
-                        Escolha o melhor horário para sua consulta.
+<a
 
-                    </h2>
+href="https://www.doctoralia.com.br/"
 
-                    <p>
+target="_blank"
 
-                        O agendamento é realizado diretamente pela Doctoralia de forma rápida e segura.
+rel="noopener noreferrer"
 
-                    </p>
+class="btn btn-primary">
 
-                </div>
+Agendar pela Doctoralia
 
-                <ul class="doctoralia-list">
+</a>
 
-                    <li>
+<a
 
-                        <i data-lucide="check"></i>
+href="https://wa.me/55SEUNUMERO"
 
-                        Escolha o horário disponível.
+target="_blank"
 
-                    </li>
+rel="noopener noreferrer"
 
-                    <li>
+class="btn btn-secondary">
 
-                        <i data-lucide="check"></i>
+Falar pelo WhatsApp
 
-                        Receba a confirmação automaticamente.
+</a>
 
-                    </li>
+</div>
 
-                    <li>
+</div>
 
-                        <i data-lucide="check"></i>
+<!-- DOCTORALIA -->
 
-                        Acesse sua consulta no horário agendado.
+<div class="appointment-widget">
 
-                    </li>
+<div id="zl-url" class="zl-url">
 
-                </ul>
+<a class="zl-url" href="https://www.doctoralia.com.br/">
 
-                <a
+Dr. Gabriel Vinícius
 
-                    href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania"
+</a>
 
-                    target="_blank"
+</div>
 
-                    class="btn-primary">
+<div id="zl-container">
 
-                    Abrir Doctoralia
+<div id="zl-widget-s"></div>
 
-                </a>
+<script async src="https://platform.docplanner.com/js/widget.js"></script>
 
-            </div>
+<script>
 
-            <div class="card doctoralia-widget">
+new DoctoraliaWidget({
 
-                <a
-                id="zl-url"
-                class="zl-url"
-                href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania"
-                rel="nofollow"
-                data-zlw-doctor="gabriel-vinicius-2"
-                data-zlw-type="big_with_calendar"
-                data-zlw-opinion="false"
-                data-zlw-hide-branding="true"
-                data-zlw-saas-only="true">
+doctorId: "SEU_ID_DOCTORALIA",
 
-                Marque sua consulta
+language: "pt-BR",
 
-                </a>
+container: document.getElementById("zl-widget-s")
 
-            </div>
+});
 
-        </div>
+</script>
 
-    </div>
+</div>
 
-</section>
+</div>
 
-<section id="avaliacoes">
+</div>
 
-    <div class="container">
+</div>
 
-        <div class="section-title">
+</section><!-- =====================================================
+AVALIAÇÕES
+===================================================== -->
 
-            <span>AVALIAÇÕES</span>
+<section
+id="avaliacoes"
+class="reviews">
 
-            <h2>
+<div class="container">
 
-                A confiança dos pacientes é o melhor reconhecimento.
+<div class="section-header">
 
-            </h2>
+<span class="section-label">
 
-            <p>
+Avaliações
 
-                Avaliações públicas verificadas na Doctoralia.
+</span>
 
-            </p>
+<h2>
 
-        </div>
+A confiança dos pacientes
+é construída em cada atendimento.
 
-        <div class="cards-grid">
+</h2>
 
-            <article class="card review">
+<p>
 
-                <div class="rating-stars">
+A satisfação dos pacientes é resultado de um atendimento
+humanizado, baseado em evidências científicas e realizado
+com ética, respeito e transparência.
 
-                    ★★★★★
+</p>
 
-                </div>
+</div>
 
-                <p>
+<div class="reviews-grid">
 
-                    "Excelente atendimento! Extremamente competente, humano e acolhedor."
+<article class="review-card">
 
-                </p>
+<div class="review-stars">
 
-                <strong>
+★★★★★
 
-                    Laura Menezes
+</div>
 
-                </strong>
+<p>
 
-            </article>
+"Espaço reservado para avaliações públicas da Doctoralia."
 
-            <article class="card review">
+</p>
 
-                <div class="rating-stars">
+<footer>
 
-                    ★★★★★
+<strong>
 
-                </div>
+Paciente
 
-                <p>
+</strong>
 
-                    "Muito competente, atencioso e excelente profissional."
+<span>
 
-                </p>
+Avaliação verificada
 
-                <strong>
-
-                    Diego Santos
-
-                </strong>
-
-            </article>
-
-            <article class="card review">
-
-                <div class="rating-stars">
-
-                    ★★★★★
-
-                </div>
-
-                <p>
-
-                    "Médico dedicado ao atendimento e às necessidades do paciente."
-
-                </p>
-
-                <strong>
-
-                    Paulo Henrique
-
-                </strong>
-
-            </article>
-
-        </div>
-
-        <div class="reviews-action">
-
-            <a
-
-            href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania"
-
-            target="_blank"
-
-            class="btn-secondary">
-
-            Ver todas as avaliações
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section><section class="cta">
-
-    <div class="container">
-
-        <div class="card cta-card">
-
-            <div class="cta-content">
-
-                <span class="section-label">
-
-                    AGENDAMENTO ONLINE
-
-                </span>
-
-                <h2>
-
-                    Cuide da sua saúde sem sair de casa.
-
-                </h2>
-
-                <p>
-
-                    Agende sua consulta online com praticidade, segurança e atendimento individualizado.
-
-                </p>
-
-            </div>
-
-            <div class="cta-actions">
-
-                <a href="#agendamento" class="btn-primary">
-
-                    Agendar consulta
-
-                </a>
-
-                <a href="#contato" class="btn-secondary">
-
-                    Tirar dúvidas
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="contato">
-
-    <div class="container">
-
-        <div class="contact-grid">
-
-            <div class="contact-info">
-
-                <div class="section-title">
-
-                    <span>
-
-                        CONTATO
-
-                    </span>
-
-                    <h2>
-
-                        Ficou com alguma dúvida?
-
-                    </h2>
-
-                    <p>
-
-                        Caso deseje esclarecer alguma informação antes do agendamento, envie uma mensagem pelo formulário.
-
-                    </p>
-
-                </div>
-
-                <div class="contact-list">
-
-                    <div>
-
-                        <i data-lucide="mail"></i>
-
-                        <span>
-
-                            gabrielviniciusmn@gmail.com
-
-                        </span>
-
-                    </div>
-
-                    <div>
-
-                        <i data-lucide="monitor-smartphone"></i>
-
-                        <span>
-
-                            Atendimento exclusivamente por telemedicina
-
-                        </span>
-
-                    </div>
-
-                    <div>
-
-                        <i data-lucide="map"></i>
-
-                        <span>
-
-                            Atendimento para pacientes de todo o Brasil
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <form id="contactForm" class="card contact-form">
-
-                <input
-                    type="text"
-                    id="nome"
-                    placeholder="Nome completo"
-                    required>
-
-                <input
-                    type="tel"
-                    id="whatsapp"
-                    placeholder="WhatsApp"
-                    required>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="E-mail">
-
-                <select id="motivo">
-
-                    <option>Primeira consulta</option>
-                    <option>Retorno</option>
-                    <option>Dúvidas</option>
-                    <option>Outro assunto</option>
-
-                </select>
-
-                <textarea
-                    id="mensagem"
-                    rows="6"
-                    placeholder="Escreva sua mensagem"></textarea>
-
-                <button
-                    type="submit"
-                    class="btn-primary">
-
-                    Enviar mensagem
-
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section id="faq">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>
-
-                PERGUNTAS FREQUENTES
-
-            </span>
-
-            <h2>
-
-                Dúvidas frequentes sobre a teleconsulta
-
-            </h2>
-
-            <p>
-
-                Algumas respostas para perguntas comuns antes do seu atendimento.
-
-            </p>
-
-        </div>
-
-        <div class="faq-list">
-
-            <article class="card faq-item">
-
-                <button class="faq-question">
-
-                    A consulta é realizada somente online?
-
-                    <i data-lucide="plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-
-                        Sim. O atendimento é realizado exclusivamente por telemedicina para pacientes em todo o território nacional.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="card faq-item">
-
-                <button class="faq-question">
-
-                    Receberei receita, atestado ou solicitação de exames?
-
-                    <i data-lucide="plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-
-                        Quando houver indicação clínica, poderão ser emitidos documentos digitais compatíveis com a consulta realizada.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="card faq-item">
-
-                <button class="faq-question">
-
-                    Como funciona o agendamento?
-
-                    <i data-lucide="plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-
-                        O agendamento é realizado diretamente pela Doctoralia, onde você poderá escolher o melhor horário disponível.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="card faq-item">
-
-                <button class="faq-question">
-
-                    Quando será necessário atendimento presencial?
-
-                    <i data-lucide="plus"></i>
-
-                </button>
-
-                <div class="faq-answer">
-
-                    <p>
-
-                        Caso seja identificada necessidade de avaliação presencial ou atendimento de urgência, você receberá a orientação adequada durante a consulta.
-
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div class="footer-brand">
-
-                <h3>
-
-                    Dr. Gabriel Vinícius
-
-                </h3>
-
-                <p>
-
-                    CRM-GO 40886
-
-                </p>
-
-                <p>
-
-                    Consulta médica exclusivamente por telemedicina.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Navegação
-
-                </h4>
-
-                <a href="#sobre">Sobre</a>
-
-                <a href="#diferenciais">Diferenciais</a>
-
-                <a href="#como-funciona">Como funciona</a>
-
-                <a href="#agendamento">Agendamento</a>
-
-                <a href="#faq">FAQ</a>
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Contato
-
-                </h4>
-
-                <a href="mailto:gabrielviniciusmn@gmail.com">
-
-                    gabrielviniciusmn@gmail.com
-
-                </a>
-
-                <a
-                    href="https://www.instagram.com/dr.gabrielvinicius_mn/"
-                    target="_blank"
-                    rel="noopener">
-
-                    Instagram
-
-                </a>
-
-                <a
-                    href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania"
-                    target="_blank"
-                    rel="noopener">
-
-                    Doctoralia
-
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <p>
-
-                © 2026 Dr. Gabriel Vinícius • CRM-GO 40886 • Todos os direitos reservados.
-
-            </p>
-
-        </div>
-
-    </div>
+</span>
 
 </footer>
 
-<button
-    class="floating-cta"
-    onclick="document.getElementById('agendamento').scrollIntoView({behavior:'smooth'})"
-    aria-label="Agendar consulta">
+</article>
 
-    Agendar consulta
+<article class="review-card">
+
+<div class="review-stars">
+
+★★★★★
+
+</div>
+
+<p>
+
+"Espaço reservado para avaliações públicas da Doctoralia."
+
+</p>
+
+<footer>
+
+<strong>
+
+Paciente
+
+</strong>
+
+<span>
+
+Avaliação verificada
+
+</span>
+
+</footer>
+
+</article>
+
+<article class="review-card">
+
+<div class="review-stars">
+
+★★★★★
+
+</div>
+
+<p>
+
+"Espaço reservado para avaliações públicas da Doctoralia."
+
+</p>
+
+<footer>
+
+<strong>
+
+Paciente
+
+</strong>
+
+<span>
+
+Avaliação verificada
+
+</span>
+
+</footer>
+
+</article>
+
+</div>
+
+<div class="reviews-cta">
+
+<a
+
+href="https://www.doctoralia.com.br/"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+class="btn btn-primary">
+
+Ver perfil na Doctoralia
+
+</a>
+
+</div>
+
+</div>
+
+</section><!-- =====================================================
+CTA
+===================================================== -->
+
+<section
+id="cta"
+class="cta">
+
+<div class="container">
+
+<div class="cta-card">
+
+<div class="cta-content">
+
+<span class="section-label">
+
+Pronto para começar?
+
+</span>
+
+<h2>
+
+Cuide da sua saúde
+com praticidade
+e segurança.
+
+</h2>
+
+<p>
+
+Realize sua consulta médica online com atendimento humanizado,
+privacidade e foco na melhor conduta para cada paciente.
+
+</p>
+
+<div class="cta-features">
+
+<div class="cta-feature">
+
+<i data-lucide="badge-check"></i>
+
+<span>
+
+CRM-GO 40886
+
+</span>
+
+</div>
+
+<div class="cta-feature">
+
+<i data-lucide="monitor-smartphone"></i>
+
+<span>
+
+Teleconsulta para todo o Brasil
+
+</span>
+
+</div>
+
+<div class="cta-feature">
+
+<i data-lucide="shield-check"></i>
+
+<span>
+
+Consulta segura
+
+</span>
+
+</div>
+
+</div>
+
+<div class="cta-actions">
+
+<a
+href="#agendamento"
+class="btn btn-primary">
+
+Agendar consulta
+
+</a>
+
+<a
+href="#contato"
+class="btn btn-secondary">
+
+Entrar em contato
+
+</a>
+
+</div>
+
+</div>
+
+<div class="cta-image">
+
+<img
+
+src="assets/dr-gabriel.webp"
+
+alt="Dr. Gabriel Vinícius"
+
+loading="lazy"
+
+width="460"
+
+height="560">
+
+</div>
+
+</div>
+
+</div>
+
+</section><!-- =====================================================
+CONTATO
+===================================================== -->
+
+<section
+id="contato"
+class="contact">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-label">
+
+Contato
+
+</span>
+
+<h2>
+
+Estou à disposição
+para cuidar da sua saúde.
+
+</h2>
+
+<p>
+
+Caso tenha dúvidas sobre a consulta ou o processo de
+agendamento, entre em contato pelos canais abaixo.
+
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<!-- Informações -->
+
+<div class="contact-info">
+
+<div class="contact-item">
+
+<div class="contact-icon">
+
+<i data-lucide="phone"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Telefone / WhatsApp
+
+</h3>
+
+<a
+href="https://wa.me/55SEUNUMERO"
+target="_blank"
+rel="noopener">
+
+(XX) XXXXX-XXXX
+
+</a>
+
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<div class="contact-icon">
+
+<i data-lucide="mail"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+E-mail
+
+</h3>
+
+<a href="mailto:contato@seudominio.com.br">
+
+contato@seudominio.com.br
+
+</a>
+
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<div class="contact-icon">
+
+<i data-lucide="map-pin"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Área de atendimento
+
+</h3>
+
+<p>
+
+Teleconsulta para pacientes de todo o Brasil.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="contact-item">
+
+<div class="contact-icon">
+
+<i data-lucide="clock-3"></i>
+
+</div>
+
+<div>
+
+<h3>
+
+Horários
+
+</h3>
+
+<p>
+
+Conforme disponibilidade na agenda da Doctoralia.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CTA -->
+
+<div class="contact-card">
+
+<h3>
+
+Agende sua consulta
+
+</h3>
+
+<p>
+
+Escolha o melhor horário disponível e realize seu atendimento
+de forma segura e prática.
+
+</p>
+
+<div class="contact-actions">
+
+<a
+href="#agendamento"
+class="btn btn-primary">
+
+Agendar pela Doctoralia
+
+</a>
+
+<a
+href="https://wa.me/55SEUNUMERO"
+target="_blank"
+rel="noopener"
+class="btn btn-secondary">
+
+Falar no WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section><!-- =====================================================
+FAQ
+===================================================== -->
+
+<section
+id="faq"
+class="faq">
+
+<div class="container">
+
+<div class="section-header">
+
+<span class="section-label">
+
+Perguntas Frequentes
+
+</span>
+
+<h2>
+
+Esclareça suas dúvidas
+antes da consulta.
+
+</h2>
+
+<p>
+
+Confira as respostas para as perguntas mais frequentes sobre
+teleconsulta, agendamento e documentos médicos.
+
+</p>
+
+</div>
+
+<div class="faq-list">
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+Como funciona a teleconsulta?
+
+</span>
+
+<i data-lucide="plus"></i>
 
 </button>
 
-<script src="script.js"></script>
+<div class="faq-answer">
+
+<p>
+
+A consulta é realizada por videochamada em plataforma segura, permitindo avaliação médica, orientação clínica e definição da conduta mais adequada para cada caso.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+Posso realizar a consulta de qualquer estado do Brasil?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Sim. O atendimento é realizado por telemedicina para pacientes em todo o território nacional, conforme a regulamentação vigente.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+Receitas e atestados podem ser emitidos?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Quando houver indicação clínica, poderão ser emitidos documentos médicos em formato digital, como receitas, solicitações de exames, atestados e relatórios, conforme avaliação durante a consulta.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+Quais formas de pagamento são aceitas?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+As formas de pagamento disponíveis serão informadas durante o processo de agendamento.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+Como faço para agendar uma consulta?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Você pode realizar o agendamento pela Doctoralia ou entrar em contato pelo WhatsApp para obter orientações.
+
+</p>
+
+</div>
+
+</article>
+
+<article class="faq-item">
+
+<button class="faq-question">
+
+<span>
+
+A consulta é sigilosa?
+
+</span>
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Sim. O atendimento segue os princípios éticos da prática médica e é realizado em ambiente que busca preservar a privacidade e a confidencialidade das informações.
+
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section><!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<!-- Marca -->
+
+<div class="footer-brand">
+
+<h3>
+
+Dr. Gabriel Vinícius
+
+</h3>
+
+<p>
+
+CRM-GO 40886
+
+</p>
+
+<p>
+
+Consulta médica online para pacientes de todo o Brasil,
+com atendimento humanizado, ética e medicina baseada em evidências.
+
+</p>
+
+</div>
+
+<!-- Navegação -->
+
+<div class="footer-links">
+
+<h4>
+
+Navegação
+
+</h4>
+
+<ul>
+
+<li><a href="#inicio">Início</a></li>
+
+<li><a href="#sobre">Sobre</a></li>
+
+<li><a href="#diferenciais">Diferenciais</a></li>
+
+<li><a href="#como-funciona">Como funciona</a></li>
+
+<li><a href="#agendamento">Agendamento</a></li>
+
+<li><a href="#faq">FAQ</a></li>
+
+<li><a href="#contato">Contato</a></li>
+
+</ul>
+
+</div>
+
+<!-- Contato -->
+
+<div class="footer-contact">
+
+<h4>
+
+Contato
+
+</h4>
+
+<p>
+
+Teleconsulta para pacientes de todo o Brasil
+
+</p>
+
+<a
+href="mailto:contato@seudominio.com.br">
+
+contato@seudominio.com.br
+
+</a>
+
+<a
+href="https://wa.me/55SEUNUMERO"
+target="_blank"
+rel="noopener">
+
+WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026 Dr. Gabriel Vinícius.
+Todos os direitos reservados.
+
+</p>
+
+<nav>
+
+<a href="politica-de-privacidade.html">
+
+Política de Privacidade
+
+</a>
+
+<span>•</span>
+
+<a href="termos-de-uso.html">
+
+Termos de Uso
+
+</a>
+
+</nav>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- =====================================================
+BOTÃO FLUTUANTE
+===================================================== -->
+
+<a
+
+href="#agendamento"
+
+class="floating-cta"
+
+aria-label="Agendar consulta">
+
+<i data-lucide="calendar-plus"></i>
+
+<span>
+
+Agendar consulta
+
+</span>
+
+</a>
+
+<!-- =====================================================
+TOAST
+===================================================== -->
+
+<div
+id="toast"
+class="toast"
+aria-live="polite">
+
+Consulta agendada com sucesso.
+
+</div>
+
+<!-- =====================================================
+SCRIPTS
+===================================================== -->
 
 <script>
-    lucide.createIcons();
+
+lucide.createIcons();
+
 </script>
 
-<script>
-!function($_x,_s,id){
-var js,fjs=$_x.getElementsByTagName(_s)[0];
-if(!$_x.getElementById(id)){
-js=$_x.createElement(_s);
-js.id=id;
-js.src="https://platform.docplanner.com/js/widget.js";
-fjs.parentNode.insertBefore(js,fjs);
-}
-}(document,"script","zl-widget-s");
+<script
+src="script.js"
+defer>
+
 </script>
+
+<!-- =====================================================
+GOOGLE TAG MANAGER
+(Substituir GTM-XXXXXXX)
+===================================================== -->
+
+<!-- Google Tag Manager (será inserido aqui) -->
+
+<!-- =====================================================
+GOOGLE ANALYTICS 4
+(Substituir G-XXXXXXXXXX)
+===================================================== -->
+
+<!-- Google Analytics 4 (será inserido aqui) -->
+
+</main>
 
 </body>
 
