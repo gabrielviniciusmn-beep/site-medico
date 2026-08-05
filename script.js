@@ -208,3 +208,101 @@ function mostrarMensagem(texto, sucesso) {
     }
 
 }
+
+/* ==========================================
+   MÁSCARA DO WHATSAPP
+========================================== */
+
+const whatsapp = document.getElementById("whatsapp");
+
+if (whatsapp) {
+
+    whatsapp.addEventListener("input", function () {
+
+        let valor = this.value.replace(/\D/g, "");
+
+        valor = valor.replace(/^(\d{2})(\d)/, "($1) $2");
+
+        valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+
+        this.value = valor;
+
+    });
+
+}
+
+/* ==========================================
+   MENU ATIVO
+========================================== */
+
+const sections = document.querySelectorAll("section[id]");
+const menuLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(sec => {
+
+        const top = sec.offsetTop - 120;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute("id");
+
+        if (scrollY >= top && scrollY < top + height) {
+
+            menuLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (link.getAttribute("href") === "#" + id) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+    });
+
+});
+
+/* ==========================================
+   EFEITO NOS CARDS
+========================================== */
+
+document.querySelectorAll(".card").forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0)";
+
+    });
+
+});
+
+/* ==========================================
+   ANO AUTOMÁTICO NO RODAPÉ
+========================================== */
+
+const copyright = document.querySelector(".copyright");
+
+if (copyright) {
+
+    copyright.innerHTML =
+        `© ${new Date().getFullYear()} Dr. Gabriel Vinícius • Todos os direitos reservados.`;
+
+}
+
+/* ==========================================
+   FIM DO SCRIPT
+========================================== */
+
+console.log("Site carregado com sucesso.");
