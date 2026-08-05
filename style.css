@@ -1563,4 +1563,167 @@ body{
 
 }
 
+}/* ==========================================================
+   MOBILE V3 - AJUSTES VISUAIS
+========================================================== */
+
+@media (max-width:768px){
+
+/* Hero mais compacto */
+
+.hero{
+
+    padding-top:24px;
+
+    padding-bottom:32px;
+
+}
+
+.hero-label{
+
+    margin-bottom:16px;
+
+}
+
+.hero h1{
+
+    font-size:2rem;
+
+    line-height:1.15;
+
+    margin-bottom:16px;
+
+    text-align:center;
+
+}
+
+.hero p{
+
+    font-size:1rem;
+
+    line-height:1.6;
+
+    text-align:center;
+
+    margin-bottom:24px;
+
+}
+
+/* Botões */
+
+.hero-actions{
+
+    margin-bottom:24px;
+
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary{
+
+    min-height:54px;
+
+    font-size:1rem;
+
+}
+
+/* Foto */
+
+.hero-image{
+
+    margin:8px 0 20px;
+
+}
+
+.hero-image img{
+
+    max-width:280px;
+
+    border-radius:20px;
+
+}
+
+/* Avaliações */
+
+.hero-rating{
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin-bottom:24px;
+
+}
+
+.rating-stars{
+
+    font-size:1.2rem;
+
+}
+
+/* Destaques */
+
+.hero-highlights{
+
+    gap:12px;
+
+}
+
+.highlight{
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+}
+
+.highlight strong{
+
+    font-size:.95rem;
+
+}
+
+.highlight p{
+
+    margin:2px 0 0;
+
+    font-size:.88rem;
+
+    text-align:left;
+
+}
+
+/* Seções */
+
+section{
+
+    padding:56px 0;
+
+}
+
+.section-title{
+
+    margin-bottom:36px;
+
+}
+
+.section-title h2{
+
+    font-size:1.8rem;
+
+}
+
+.section-title p{
+
+    font-size:.98rem;
+
+}
+
+/* Evita qualquer elemento extrapolar a tela */
+
+*{
+
+    max-width:100%;
+
+}
+
 }
