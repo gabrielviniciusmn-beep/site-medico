@@ -3,26 +3,25 @@
    SCRIPT.JS
 ========================================== */
 
-const API_URL =
-"https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc44DCJEQW5w1l3KHWfp7l3twTJ-e1GwqFxsfPjB8k7bUyW/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc44DCJEQW5w1l3KHWfp7l3twTJ-e1GwqFxsfPjB8k7bUyW/exec";
 
 /* ==========================================
    HEADER
 ========================================== */
 
-const header = document.querySelector(".header");
+const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 40) {
+    if (!header) return;
 
-        header.style.boxShadow = "0 12px 35px rgba(0,0,0,.08)";
-        header.style.background = "rgba(255,255,255,.98)";
+    if (window.scrollY > 50) {
+
+        header.classList.add("header-scroll");
 
     } else {
 
-        header.style.boxShadow = "0 2px 20px rgba(0,0,0,.05)";
-        header.style.background = "rgba(255,255,255,.95)";
+        header.classList.remove("header-scroll");
 
     }
 
@@ -45,7 +44,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 
 }, {
-    threshold: .15
+
+    threshold: 0.15
+
 });
 
 document.querySelectorAll("section").forEach(section => {
@@ -60,17 +61,17 @@ document.querySelectorAll("section").forEach(section => {
 
 document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", function(e){
 
         e.preventDefault();
 
         const destino = document.querySelector(this.getAttribute("href"));
 
-        if (destino) {
+        if(destino){
 
             destino.scrollIntoView({
 
-                behavior: "smooth"
+                behavior:"smooth"
 
             });
 
@@ -86,86 +87,89 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 const form = document.getElementById("contactForm");
 
-if (form) {
+if(form){
 
-    form.addEventListener("submit", async function (e) {
+form.addEventListener("submit", async function(e){
 
-        e.preventDefault();
+e.preventDefault();
 
-        const botao = form.querySelector("button");
+const botao = form.querySelector("button");
 
-        botao.disabled = true;
-        botao.innerHTML = "Enviando...";
+botao.disabled = true;
 
-        const dados = {
+const textoOriginal = botao.innerHTML;
 
-            nome: document.getElementById("nome").value,
+botao.innerHTML = "Enviando...";
 
-            whatsapp: document.getElementById("whatsapp").value,
+const dados = {
 
-            email: document.getElementById("email").value,
+nome: document.getElementById("nome").value,
 
-            motivo: document.getElementById("motivo").value,
+whatsapp: document.getElementById("whatsapp").value,
 
-            mensagem: document.getElementById("mensagem").value,
+email: document.getElementById("email").value,
 
-            origem: "Site"
+motivo: document.getElementById("motivo").value,
 
-        };
+mensagem: document.getElementById("mensagem").value,
 
-        try {
+origem: "Site"
 
-            await fetch(API_URL, {
+};
 
-                method: "POST",
+try{
 
-                mode: "no-cors",
+await fetch(API_URL,{
 
-                body: JSON.stringify(dados)
+method:"POST",
 
-            });
+mode:"no-cors",
 
-            form.reset();
+body:JSON.stringify(dados)
 
-            mostrarMensagem(
+});
 
-                "✅ Solicitação enviada com sucesso! Em breve entrarei em contato.",
+form.reset();
 
-                true
+mostrarMensagem(
 
-            );
+"✅ Solicitação enviada com sucesso! Em breve entrarei em contato.",
 
-            if (typeof gtag === "function") {
+true
 
-                gtag("event", "generate_lead", {
+);
 
-                    event_category: "Contato",
+if(typeof gtag==="function"){
 
-                    event_label: "Formulario"
+gtag("event","generate_lead",{
 
-                });
+event_category:"Contato",
 
-            }
+event_label:"Formulario"
 
-        } catch (erro) {
+});
 
-            console.error(erro);
+}
 
-            mostrarMensagem(
+}catch(erro){
 
-                "❌ Não foi possível enviar sua solicitação. Tente novamente.",
+console.error(erro);
 
-                false
+mostrarMensagem(
 
-            );
+"❌ Não foi possível enviar sua solicitação. Tente novamente.",
 
-        }
+false
 
-        botao.disabled = false;
+);
 
-        botao.innerHTML = "Solicitar Contato";
+}
 
-    });
+botao.disabled=false;
+
+botao.innerHTML=textoOriginal;
+
+});
 
 }
 
@@ -173,44 +177,63 @@ if (form) {
    MENSAGEM
 ========================================== */
 
-function mostrarMensagem(texto, sucesso) {
+function mostrarMensagem(texto,sucesso){
 
-    let caixa = document.getElementById("mensagemSite");
+let caixa=document.getElementById("mensagemSite");
 
-    if (!caixa) {
+if(!caixa){
 
-        caixa = document.createElement("div");
+caixa=document.createElement("div");
 
-        caixa.id = "mensagemSite";
+caixa.id="mensagemSite";
 
-        form.appendChild(caixa);
+caixa.style.marginTop="25px";
 
-    }
-
-    caixa.innerHTML = texto;
-
-    caixa.style.marginTop = "20px";
-    caixa.style.padding = "16px";
-    caixa.style.borderRadius = "12px";
-    caixa.style.textAlign = "center";
-    caixa.style.fontWeight = "600";
-
-    if (sucesso) {
-
-        caixa.style.background = "#DCFCE7";
-        caixa.style.color = "#166534";
-
-    } else {
-
-        caixa.style.background = "#FEE2E2";
-        caixa.style.color = "#991B1B";
-
-    }
+document.querySelector(".contact-form").appendChild(caixa);
 
 }
 
+caixa.innerHTML=texto;
+
+caixa.style.padding="18px";
+
+caixa.style.borderRadius="12px";
+
+caixa.style.fontWeight="600";
+
+caixa.style.textAlign="center";
+
+caixa.style.transition=".3s";
+
+if(sucesso){
+
+caixa.style.background="#DCFCE7";
+
+caixa.style.color="#166534";
+
+}else{
+
+caixa.style.background="#FEE2E2";
+
+caixa.style.color="#991B1B";
+
+}
+
+setTimeout(()=>{
+
+caixa.style.opacity="0";
+
+setTimeout(()=>{
+
+caixa.remove();
+
+},500);
+
+},5000);
+
+}
 /* ==========================================
-   MÁSCARA DO WHATSAPP
+   MÁSCARA WHATSAPP
 ========================================== */
 
 const whatsapp = document.getElementById("whatsapp");
@@ -221,9 +244,21 @@ if (whatsapp) {
 
         let valor = this.value.replace(/\D/g, "");
 
-        valor = valor.replace(/^(\d{2})(\d)/, "($1) $2");
+        if (valor.length > 11) {
 
-        valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+            valor = valor.substring(0, 11);
+
+        }
+
+        if (valor.length > 10) {
+
+            valor = valor.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+
+        } else {
+
+            valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+
+        }
 
         this.value = valor;
 
@@ -235,22 +270,22 @@ if (whatsapp) {
    MENU ATIVO
 ========================================== */
 
-const sections = document.querySelectorAll("section[id]");
-const menuLinks = document.querySelectorAll("nav a");
+const secoes = document.querySelectorAll("section[id]");
+const links = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
 
-    let scrollY = window.pageYOffset;
+    let scroll = window.scrollY + 150;
 
-    sections.forEach(sec => {
+    secoes.forEach(secao => {
 
-        const top = sec.offsetTop - 120;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute("id");
+        const topo = secao.offsetTop;
+        const altura = secao.offsetHeight;
+        const id = secao.getAttribute("id");
 
-        if (scrollY >= top && scrollY < top + height) {
+        if (scroll >= topo && scroll < topo + altura) {
 
-            menuLinks.forEach(link => {
+            links.forEach(link => {
 
                 link.classList.remove("active");
 
@@ -269,14 +304,14 @@ window.addEventListener("scroll", () => {
 });
 
 /* ==========================================
-   EFEITO NOS CARDS
+   HOVER DOS CARDS
 ========================================== */
 
-document.querySelectorAll(".card").forEach(card => {
+document.querySelectorAll(".service-card").forEach(card => {
 
     card.addEventListener("mouseenter", () => {
 
-        card.style.transform = "translateY(-10px)";
+        card.style.transform = "translateY(-8px)";
 
     });
 
@@ -289,7 +324,7 @@ document.querySelectorAll(".card").forEach(card => {
 });
 
 /* ==========================================
-   ANO AUTOMÁTICO NO RODAPÉ
+   ANO AUTOMÁTICO
 ========================================== */
 
 const copyright = document.querySelector(".copyright");
@@ -302,7 +337,7 @@ if (copyright) {
 }
 
 /* ==========================================
-   FIM DO SCRIPT
+   CONSOLE
 ========================================== */
 
 console.log("Site carregado com sucesso.");
