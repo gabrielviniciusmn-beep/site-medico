@@ -79,3 +79,132 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 
 });
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+const form = document.getElementById("contactForm");
+
+if (form) {
+
+    form.addEventListener("submit", async function (e) {
+
+        e.preventDefault();
+
+        const botao = form.querySelector("button");
+
+        botao.disabled = true;
+        botao.innerHTML = "Enviando...";
+
+        const dados = {
+
+            nome: document.getElementById("nome").value,
+
+            whatsapp: document.getElementById("whatsapp").value,
+
+            email: document.getElementById("email").value,
+
+            motivo: document.getElementById("motivo").value,
+
+            mensagem: document.getElementById("mensagem").value,
+
+            origem: "Site"
+
+        };
+
+        try {
+
+            await fetch(API_URL, {
+
+                method: "POST",
+
+                mode: "no-cors",
+
+                body: JSON.stringify(dados)
+
+            });
+
+            form.reset();
+
+            mostrarMensagem(
+
+                "✅ Solicitação enviada com sucesso! Em breve entrarei em contato.",
+
+                true
+
+            );
+
+            if (typeof gtag === "function") {
+
+                gtag("event", "generate_lead", {
+
+                    event_category: "Contato",
+
+                    event_label: "Formulario"
+
+                });
+
+            }
+
+        } catch (erro) {
+
+            console.error(erro);
+
+            mostrarMensagem(
+
+                "❌ Não foi possível enviar sua solicitação. Tente novamente.",
+
+                false
+
+            );
+
+        }
+
+        botao.disabled = false;
+
+        botao.innerHTML = "Solicitar Contato";
+
+    });
+
+}
+
+/* ==========================================
+   MENSAGEM
+========================================== */
+
+function mostrarMensagem(texto, sucesso) {
+
+    let caixa = document.getElementById("mensagemSite");
+
+    if (!caixa) {
+
+        caixa = document.createElement("div");
+
+        caixa.id = "mensagemSite";
+
+        form.appendChild(caixa);
+
+    }
+
+    caixa.innerHTML = texto;
+
+    caixa.style.marginTop = "20px";
+    caixa.style.padding = "16px";
+    caixa.style.borderRadius = "12px";
+    caixa.style.textAlign = "center";
+    caixa.style.fontWeight = "600";
+
+    if (sucesso) {
+
+        caixa.style.background = "#DCFCE7";
+        caixa.style.color = "#166534";
+
+    } else {
+
+        caixa.style.background = "#FEE2E2";
+        caixa.style.color = "#991B1B";
+
+    }
+
+}
