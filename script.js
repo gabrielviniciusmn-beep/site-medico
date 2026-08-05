@@ -1,195 +1,67 @@
-/* =====================================
-   SITE DR. GABRIEL VINÍCIUS
-===================================== */
+const API_URL = "https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc44DCJEQW5w1l3KHWfp7l3twTJ-e1GwqFxsfPjB8k7bUyW/exec";
 
-document.addEventListener("DOMContentLoaded", () => {
+const form = document.getElementById("contactForm");
 
-    iniciarHeader();
+form.addEventListener("submit", async function(e){
 
-    iniciarScroll();
+    e.preventDefault();
 
-    iniciarAnimacoes();
+    const botao = form.querySelector("button");
 
-    configurarAnalytics();
+    botao.disabled = true;
+    botao.innerHTML = "Enviando...";
 
-});
+    const dados = {
 
+        nome: document.getElementById("nome").value,
 
-/* =====================================
-   HEADER
-===================================== */
+        whatsapp: document.getElementById("whatsapp").value,
 
-function iniciarHeader(){
+        email: document.getElementById("email").value,
 
-    const header = document.querySelector(".header");
+        motivo: document.getElementById("motivo").value,
 
-    window.addEventListener("scroll", ()=>{
+        mensagem: document.getElementById("mensagem").value,
 
-        if(window.scrollY > 40){
+        origem: "Site"
 
-            header.style.boxShadow="0 10px 30px rgba(0,0,0,.08)";
-
-        }else{
-
-            header.style.boxShadow="0 2px 10px rgba(0,0,0,.08)";
-
-        }
-
-    });
-
-}
-
-
-/* =====================================
-   SCROLL SUAVE
-===================================== */
-
-function iniciarScroll(){
-
-    document.querySelectorAll('a[href^="#"]').forEach(link=>{
-
-        link.addEventListener("click",function(e){
-
-            e.preventDefault();
-
-            const destino=document.querySelector(this.getAttribute("href"));
-
-            if(destino){
-
-                destino.scrollIntoView({
-
-                    behavior:"smooth"
-
-                });
-
-            }
-
-        });
-
-    });
-
-}
-
-
-/* =====================================
-   ANIMAÇÕES
-===================================== */
-
-function iniciarAnimacoes(){
-
-    const elementos=document.querySelectorAll("section");
-
-    const observer=new IntersectionObserver((entries)=>{
-
-        entries.forEach(entry=>{
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("mostrar");
-
-            }
-
-        });
-
-    },{
-
-        threshold:0.15
-
-    });
-
-    elementos.forEach(sec=>{
-
-        observer.observe(sec);
-
-    });
-
-}
-
-
-/* =====================================
-   GOOGLE ANALYTICS
-===================================== */
-
-function configurarAnalytics(){
-
-    document.querySelectorAll("a").forEach(botao=>{
-
-        botao.addEventListener("click",()=>{
-
-            if(typeof gtag==="function"){
-
-                gtag("event","click",{
-
-                    event_category:"Botao",
-
-                    event_label:botao.innerText
-
-                });
-
-            }
-
-        });
-
-    });
-
-}
-
-
-/* =====================================
-   FORMULÁRIO
-===================================== */
-
-async function enviarFormulario(dados){
-
-    const endpoint="https://script.google.com/macros/s/AKfycbwYa5HId5Uv2Vw6dTuhSyc44DCJEQW5w1l3KHWfp7l3twTJ-e1GwqFxsfPjB8k7bUyW/exec";
+    };
 
     try{
 
-        const resposta=await fetch(endpoint,{
+        const resposta = await fetch(API_URL,{
 
             method:"POST",
 
             headers:{
-
                 "Content-Type":"application/json"
-
             },
 
             body:JSON.stringify(dados)
 
         });
 
-        const json=await resposta.json();
+        const json = await resposta.json();
 
-        console.log(json);
+        if(json.success){
+
+            alert("Solicitação enviada com sucesso!");
+
+            form.reset();
+
+        }else{
+
+            alert("Erro ao enviar.");
+
+        }
+
+    }catch(e){
+
+        alert("Não foi possível conectar ao servidor.");
 
     }
 
-    catch(erro){
+    botao.disabled=false;
+    botao.innerHTML="Solicitar Contato";
 
-        console.error(erro);
-
-    }
-
-}
-
-
-/* =====================================
-   FUTURAS FUNÇÕES
-===================================== */
-
-// Doctoralia
-
-// WhatsApp
-
-// Avaliações Google
-
-// Avaliações Doctoralia
-
-// Menu Mobile
-
-// FAQ
-
-// Dark Mode
-
-// Google Maps
+});
