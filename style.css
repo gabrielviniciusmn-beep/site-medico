@@ -109,35 +109,9 @@ h2 {
   background: var(--primary);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  padding: 12px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: var(--primary);
-  color: #ffffff;
-}
-
 .btn-lg {
   padding: 16px 36px;
   font-size: 1.05rem;
-}
-
-.btn-block {
-  width: 100%;
-  justify-content: center;
-  padding: 14px;
 }
 
 .cta-group {
@@ -265,7 +239,7 @@ nav a:hover {
 
 /* SEÇÕES GERAIS */
 .section {
-  padding: 100px 0;
+  padding: 90px 0;
 }
 
 .bg-light {
@@ -275,7 +249,7 @@ nav a:hover {
 .section-header {
   text-align: center;
   max-width: 650px;
-  margin: 0 auto 60px;
+  margin: 0 auto 50px;
 }
 
 .section-header p {
@@ -344,10 +318,10 @@ nav a:hover {
   color: var(--text-muted);
 }
 
-/* CARDS DE SERVIÇOS E AVALIAÇÕES */
+/* CARDS DE SERVIÇOS */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
 
@@ -389,55 +363,94 @@ nav a:hover {
   color: var(--text-muted);
 }
 
-/* FORMULÁRIO DE CONTATO */
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
+/* AVALIAÇÕES - CARROSSEL COM ROLAGEM */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.reviews-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px 25px 5px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Estilização da barra de rolagem */
+.reviews-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reviews-slider::-webkit-scrollbar-track {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+.review-card {
+  flex: 0 0 320px;
   background-color: var(--bg-card);
-  padding: 40px;
-  border-radius: 16px;
+  padding: 28px;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.stars {
+  color: #f59e0b;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
+.review-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.review-author {
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 8px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  color: var(--text-main);
-  background-color: var(--bg-main);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(44, 122, 123, 0.15);
-}
-
-.form-status-msg {
-  margin-top: 15px;
   font-size: 0.9rem;
-  text-align: center;
-  font-weight: 600;
 }
+
+/* Botões do carrossel */
+.carousel-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.prev-btn { margin-right: 10px; }
+.next-btn { margin-left: 10px; }
 
 /* WIDGET DOCTORALIA */
 .widget-container {
@@ -494,7 +507,7 @@ footer {
   transform: translateY(0);
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 900px) {
   .hero-container, .sobre-grid {
     grid-template-columns: 1fr;
@@ -502,7 +515,7 @@ footer {
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .hero {
@@ -517,6 +530,14 @@ footer {
 
   .hero-features, .cta-group {
     justify-content: center;
+  }
+
+  .carousel-btn {
+    display: none; /* Esconde botões no mobile para focar na rolagem por toque */
+  }
+
+  .review-card {
+    flex: 0 0 280px; /* Reduz tamanho dos cards em telas menores */
   }
 
   .footer-container {
