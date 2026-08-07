@@ -37,7 +37,6 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Atendimento</a></li>
           <li><a href="#opinioes">Avaliações</a></li>
-          <li><a href="#contato">Solicitar Contato</a></li>
           <li><a href="#agendamento" class="btn-primary" id="btn-nav-agendar">Agendar Consulta</a></li>
         </ul>
       </nav>
@@ -57,7 +56,6 @@
             <span>Marcar Consulta Online</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
-          <a href="#contato" class="btn-secondary btn-lg">Solicitar Contato</a>
         </div>
 
         <div class="hero-features">
@@ -150,125 +148,77 @@
     </div>
   </section>
 
-  <!-- AVALIAÇÕES DOS PACIENTES -->
+  <!-- AVALIAÇÕES DOS PACIENTES (CARROSSEL COM BARRA DE ROLAGEM) -->
   <section id="opinioes" class="section">
     <div class="container">
       <div class="section-header fade-in-element">
         <span class="section-tag">Avaliações</span>
         <h2>O que dizem os pacientes</h2>
-        <p>Depoimentos reais de consultas realizadas via Telemedicina</p>
+        <p>Depoimentos reais de consultas realizadas via Telemedicina (deslize para ver mais)</p>
       </div>
 
-      <div class="cards-grid">
+      <div class="carousel-wrapper fade-in-element">
+        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        
+        <div class="reviews-slider" id="reviewsSlider">
 
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Excelente atendimento! Em um momento de dificuldade, encontrei um profissional extremamente competente, humano e acolhedor. Mesmo sendo uma consulta online, me senti muito bem assistida. Recebi orientações claras, apoio e direcionamento."</p>
+            <div class="review-author">Laura Menezes</div>
           </div>
-          <p class="sobre-text">"Excelente atendimento! Em um momento de dificuldade, encontrei um profissional extremamente competente, humano e acolhedor. Mesmo sendo uma consulta online, me senti muito bem assistida. Recebi orientações claras, apoio e direcionamento."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Laura Menezes</div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"O Gabriel se mostrou um ótimo profissional, onde conseguiu me tranquilizar diante de uma situação em que me encontrava! É um excelente doutor, tem se mostrado capaz e me parece muito bem capacitado com aquilo que faz."</p>
+            <div class="review-author">Jezreel Santana</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Ótimo atendimento, médico muito prestativo e tira todas as dúvidas."</p>
+            <div class="review-author">Raissa</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Excelente dedicação, responsabilidade e respeito à saúde."</p>
+            <div class="review-author">Amilton</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Fiz uma consulta com Dr Gabriel, foi excelente super indico."</p>
+            <div class="review-author">Ioneide Ferreira</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Ótima opção, para agilizar exames de rotina ou alguma emergência também."</p>
+            <div class="review-author">Neuza Elene</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Atencioso, prestativo e acolhedor sabe investigar o problema."</p>
+            <div class="review-author">Iron</div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="review-text">"Foi excelente, ótimo profissional. Atendeu todas as minhas necessidades, muito atencioso."</p>
+            <div class="review-author">K.C.O.A.</div>
+          </div>
+
         </div>
 
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"O Gabriel se mostrou um ótimo profissional, onde conseguiu me tranquilizar diante de uma situação em que me encontrava! É um excelente doutor, tem se mostrado capaz e me parece muito bem capacitado com aquilo que faz."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Jezreel Santana</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Ótimo atendimento, médico muito prestativo e tira todas as dúvidas."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Raissa</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Excelente dedicação, responsabilidade e respeito à saúde."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Amilton</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Fiz uma consulta com Dr Gabriel, foi excelente super indico."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Ioneide Ferreira</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Ótima opção, para agilizar exames de rotina ou alguma emergência também."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Neuza Elene</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Atencioso, prestativo e acolhedor sabe investigar o problema."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">Iron</div>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="stars" style="color: #f59e0b; margin-bottom: 12px; font-size: 0.9rem;">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="sobre-text">"Foi excelente, ótimo profissional. Atendeu todas as minhas necessidades, muito atencioso."</p>
-          <div style="margin-top: 16px; font-weight: 600; color: var(--primary); font-size: 0.9rem;">K.C.O.A.</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMULÁRIO DE CONTATO -->
-  <section id="contato" class="section bg-light">
-    <div class="container">
-      <div class="section-header fade-in-element">
-        <span class="section-tag">Contato Direto</span>
-        <h2>Solicitar Agendamento</h2>
-        <p>Preencha seus dados abaixo para entrarmos em contato diretamente com você e agendar sua consulta.</p>
-      </div>
-
-      <div class="form-container fade-in-element">
-        <form id="contact-form" action="https://formspree.io/f/xqkvqbyz" method="POST">
-          <div class="form-group">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
-          </div>
-
-          <div class="form-group">
-            <label for="whatsapp">WhatsApp / Telefone com DDD</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(62) 99999-9999" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="mensagem">Mensagem / Preferência de Horário (Opcional)</label>
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Informe brevemente a preferência de dia/horário ou motivo do contato..."></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary btn-block">Enviar Solicitação</button>
-          <p id="form-status" class="form-status-msg"></p>
-        </form>
+        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
 
   <!-- SEÇÃO DE AGENDAMENTO (DOCTORALIA) -->
-  <section id="agendamento" class="section">
+  <section id="agendamento" class="section bg-light">
     <div class="container">
       <div class="section-header fade-in-element">
         <span class="section-tag">Agendamento Online</span>
