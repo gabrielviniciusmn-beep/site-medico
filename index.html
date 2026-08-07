@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Gabriel Vinícius | Telemedicina & Consulta Online</title>
+  <title>Dr. Gabriel Vinícius | Consulta Médica & Telemedicina</title>
 
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8B9LKDKGT"></script>
@@ -15,20 +15,28 @@
     gtag('config', 'G-X8B9LKDKGT');
   </script>
 
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- CABEÇALHO E NAVEGAÇÃO -->
   <header>
     <div class="container nav-container">
-      <a href="#" class="logo">Dr. Gabriel Vinícius</a>
+      <a href="#" class="logo">
+        <span class="logo-title">Dr. Gabriel Vinícius</span>
+        <span class="logo-sub">Médico · CRM GO 40886</span>
+      </a>
       <nav>
         <ul>
           <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#agendamento" class="btn-secondary" id="btn-doctoralia-nav">Agendar Consulta</a></li>
-          <li><a href="https://wa.me/5562998514930" target="_blank" class="btn-primary" id="btn-whatsapp-nav">WhatsApp</a></li>
+          <li><a href="#servicos">Atendimento</a></li>
+          <li><a href="#agendamento" class="btn-primary" id="btn-nav-agendar">Agendar Consulta</a></li>
         </ul>
       </nav>
     </div>
@@ -37,17 +45,34 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="container hero-container">
-      <div class="hero-text">
-        <span class="badge">Atendimento 100% Online</span>
-        <h1>Telemedicina Ágil, Segura e Humanizada</h1>
-        <p>Consultas médicas de onde você estiver. Emissão de receitas digitais, atestados médicos e solicitação de exames com praticidade.</p>
+      <div class="hero-text fade-in-element">
+        <span class="badge"><i class="fa-solid fa-laptop-medical"></i> Atendimento 100% Online</span>
+        <h1>Medicina preventiva e cuidado integral ao seu alcance</h1>
+        <p>Atendimento médico humanizado por telemedicina. Rigor científico, atenção individualizada e praticidade para a sua rotina.</p>
+        
         <div class="cta-group">
-          <a href="#agendamento" class="btn-secondary btn-lg">Ver Horários Disponíveis</a>
-          <a href="https://wa.me/5562998514930" target="_blank" class="btn-primary btn-lg" id="btn-whatsapp-hero">Falar no WhatsApp</a>
+          <a href="#agendamento" class="btn-primary btn-lg" id="btn-hero-agendar">
+            <span>Marcar Consulta Online</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Plataforma Segura</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Receitas e Atestados Válidos</span>
+          </div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius">
+
+      <div class="hero-img fade-in-element">
+        <div class="img-frame">
+          <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius - Médico Clínico Geral">
+        </div>
       </div>
     </div>
   </section>
@@ -55,51 +80,86 @@
   <!-- SOBRE -->
   <section id="sobre" class="section">
     <div class="container">
-      <h2>Sobre o Atendimento</h2>
-      <p class="section-desc">Atuação em clínica geral focada no acompanhamento individualizado, atendimento de sintomas agudos, consultas de rotina e check-ups — tudo via Telemedicina, sem fila de espera nem deslocamento.</p>
-    </div>
-  </section>
+      <div class="sobre-grid">
+        <div class="sobre-card fade-in-element">
+          <span class="section-tag">Perfil Profissional</span>
+          <h2>Dr. Gabriel Vinícius</h2>
+          <p class="crm-info">CRM GO 40886</p>
+          
+          <p class="sobre-text">
+            Médico com atuação dedicada ao acompanhamento clínico individualizado. O atendimento é estruturado para oferecer escuta atenta, diagnóstico fundamentado e planos terapêuticos integrais.
+          </p>
+          <p class="sobre-text">
+            Por meio da telemedicina, você recebe assistência médica completa para queixas agudas, controle de doenças crônicas ou check-ups de rotina, sem abrir mão do conforto e do rigor técnico.
+          </p>
+        </div>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="section bg-light">
-    <div class="container">
-      <h2>O que oferecemos na consulta</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Receita Digital</h3>
-          <p>Emissão e renovação de receitas médicas válidas em farmácias de todo o Brasil via QR Code/Assinatura digital.</p>
-        </div>
-        <div class="card">
-          <h3>Atestado Médico</h3>
-          <p>Avaliação clínica criteriosa com emissão de atestados digitais homologados quando indicado.</p>
-        </div>
-        <div class="card">
-          <h3>Solicitação de Exames</h3>
-          <p>Pedidos de exames laboratoriais e de imagem para diagnóstico e acompanhamento de rotina.</p>
-        </div>
-        <div class="card">
-          <h3>Consulta de Rotina & Agudos</h3>
-          <p>Atendimento para infecções, dores, renovações, acompanhamento de saúde mental e estilo de vida.</p>
+        <div class="stats-grid fade-in-element">
+          <div class="stat-box">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Telemedicina</h3>
+            <p>Atendimento de qualquer lugar do país com máxima conveniência</p>
+          </div>
+          <div class="stat-box">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h3>Acompanhamento</h3>
+            <p>Foco na prevenção, diagnósticos precisos e continuidade do cuidado</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO DE AGENDAMENTO (DOCTORALIA WIDGET) -->
+  <!-- SERVIÇOS / DIFERENCIAIS -->
+  <section id="servicos" class="section bg-light">
+    <div class="container">
+      <div class="section-header fade-in-element">
+        <span class="section-tag">Serviços Médicos</span>
+        <h2>Escopo do Atendimento Online</h2>
+        <p>Tudo o que você precisa em uma consulta médica completa e acessível.</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+          <h3>Receitas Médicas Digitais</h3>
+          <p>Emissão e renovação de prescrições médicas digitais com validação nacional por QR Code, aceitas em farmácias de todo o Brasil.</p>
+        </div>
+
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-file-medical"></i></div>
+          <h3>Atestados Médicos</h3>
+          <p>Avaliação médica detalhada com emissão de atestados e laudos digitais oficializados após análise clínica criteriosa.</p>
+        </div>
+
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-vials"></i></div>
+          <h3>Solicitação de Exames</h3>
+          <p>Pedidos de exames laboratoriais e de imagem para diagnóstico preciso ou acompanhamento preventivo periódico.</p>
+        </div>
+
+        <div class="card fade-in-element">
+          <div class="card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Check-up e Prevenção</h3>
+          <p>Orientações de saúde, tratamento de sintomas agudos e suporte para hábitos de vida saudáveis e bem-estar contínuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE AGENDAMENTO (DOCTORALIA) -->
   <section id="agendamento" class="section">
-    <div class="container text-center">
-      <h2>Agende sua Teleconsulta</h2>
-      <p>Escolha o melhor dia e horário diretamente no calendário abaixo:</p>
-      
-      <div class="widget-wrapper margin-top">
+    <div class="container">
+      <div class="section-header fade-in-element">
+        <span class="section-tag">Agendamento</span>
+        <h2>Escolha o melhor horário para sua Teleconsulta</h2>
+        <p>Selecione a data diretamente no calendário oficial abaixo:</p>
+      </div>
+
+      <div class="widget-container fade-in-element">
         <!-- Widget Doctoralia -->
         <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania" rel="nofollow" data-zlw-doctor="gabriel-vinicius-2" data-zlw-type="big_with_calendar" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Marque uma consulta</a>
         <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
-      </div>
-
-      <div class="whatsapp-support margin-top">
-        <p>Prefere agendar pelo WhatsApp?</p>
-        <a href="https://wa.me/5562998514930" target="_blank" class="btn-primary btn-lg" id="btn-whatsapp-footer">Conversar no WhatsApp</a>
       </div>
     </div>
   </section>
@@ -107,7 +167,13 @@
   <!-- RODAPÉ -->
   <footer>
     <div class="container footer-container">
-      <p>&copy; 2026 Dr. Gabriel Vinícius. Todos os direitos reservados.</p>
+      <div class="footer-brand">
+        <span class="footer-title">Dr. Gabriel Vinícius</span>
+        <p>Médico · CRM GO 40886 · Atendimento por Telemedicina</p>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
