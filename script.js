@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Estilo no cabeçalho ao rolar a página
+  // 1. Estilo/Sombra no cabeçalho ao rolar a página
   const header = document.querySelector('header');
   
   window.addEventListener('scroll', () => {
@@ -10,13 +10,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Animações de Scroll Reveal
+  // 2. Rolagem suave (Smooth Scroll) para todos os links internos
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      
+      // Se for apenas "#", ignora
+      if (targetId === '#') return;
+
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        // Deslocamento para compensar a altura do cabeçalho fixo
+        const headerOffset = header ? header.offsetHeight : 0;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // 3. Animação suave de surgimento dos elementos (Fade in)
   const fadeElements = document.querySelectorAll('.fade-in-element');
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.15
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -30,22 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // 3. Controle dos botões do Carrossel de Avaliações
-  const slider = document.getElementById('reviewsSlider');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  if (slider && prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: -340, behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: 340, behavior: 'smooth' });
-    });
-  }
-
-  // 4. Rastreamento no Analytics
+  // 4. Rastreamento no Google Analytics
   const trackClick = (label) => {
     if (typeof gtag === 'function') {
       gtag('event', 'click_agendamento', {
