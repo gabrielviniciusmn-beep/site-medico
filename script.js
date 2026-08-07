@@ -1,35 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Sombra no cabeçalho ao rolar a página
+  // 1. Efeito de alteração do cabeçalho ao rolar a página
   const header = document.querySelector('header');
   
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
     } else {
-      header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+      header.classList.remove('scrolled');
     }
   });
 
-  // Função auxiliar para enviar evento ao Google Analytics
-  const trackClick = (eventName, label) => {
+  // 2. Animação de Scroll Reveal (Aparecer elementos com elegância)
+  const fadeElements = document.querySelectorAll('.fade-in-element');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Anima apenas uma vez
+      }
+    });
+  }, observerOptions);
+
+  fadeElements.forEach(el => observer.observe(el));
+
+  // 3. Rastreamento de Agendamento no Google Analytics
+  const trackClick = (label) => {
     if (typeof gtag === 'function') {
-      gtag('event', eventName, {
+      gtag('event', 'click_agendamento', {
         'event_category': 'Agendamento',
         'event_label': label
       });
     }
   };
 
-  // Rastreamento WhatsApp
-  const btnWaNav = document.getElementById('btn-whatsapp-nav');
-  const btnWaHero = document.getElementById('btn-whatsapp-hero');
-  const btnWaFooter = document.getElementById('btn-whatsapp-footer');
+  const btnNavAgendar = document.getElementById('btn-nav-agendar');
+  const btnHeroAgendar = document.getElementById('btn-hero-agendar');
 
-  if (btnWaNav) btnWaNav.addEventListener('click', () => trackClick('click_whatsapp', 'Nav Bar'));
-  if (btnWaHero) btnWaHero.addEventListener('click', () => trackClick('click_whatsapp', 'Hero Section'));
-  if (btnWaFooter) btnWaFooter.addEventListener('click', () => trackClick('click_whatsapp', 'Footer Section'));
-
-  // Rastreamento Doctoralia Nav
-  const btnDocNav = document.getElementById('btn-doctoralia-nav');
-  if (btnDocNav) btnDocNav.addEventListener('click', () => trackClick('click_doctoralia', 'Nav Bar'));
+  if (btnNavAgendar) btnNavAgendar.addEventListener('click', () => trackClick('Header Nav'));
+  if (btnHeroAgendar) btnHeroAgendar.addEventListener('click', () => trackClick('Hero Section'));
 });
