@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Sombra e estilo no cabeçalho ao rolar
+  // 1. Estilo no cabeçalho ao rolar a página
   const header = document.querySelector('header');
   
   window.addEventListener('scroll', () => {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Animação suave ao rolar a página
+  // 2. Animações de Scroll Reveal
   const fadeElements = document.querySelectorAll('.fade-in-element');
 
   const observerOptions = {
@@ -30,42 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeElements.forEach(el => observer.observe(el));
 
-  // 3. Envio assíncrono do formulário de contato
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
+  // 3. Controle dos botões do Carrossel de Avaliações
+  const slider = document.getElementById('reviewsSlider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(contactForm);
-      formStatus.style.color = '#122b40';
-      formStatus.textContent = 'Enviando sua solicitação...';
+  if (slider && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -340, behavior: 'smooth' });
+    });
 
-      try {
-        const response = await fetch(contactForm.action, {
-          method: contactForm.method,
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          formStatus.style.color = '#00b090';
-          formStatus.textContent = 'Obrigado! Sua mensagem foi enviada. Entraremos em contato em breve.';
-          contactForm.reset();
-        } else {
-          formStatus.style.color = '#e53e3e';
-          formStatus.textContent = 'Ops! Houve um problema ao enviar. Tente novamente ou use o agendamento da Doctoralia.';
-        }
-      } catch (error) {
-        formStatus.style.color = '#e53e3e';
-        formStatus.textContent = 'Erro de conexão. Por favor, tente novamente.';
-      }
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: 340, behavior: 'smooth' });
     });
   }
 
-  // 4. Rastreamento de cliques no Analytics
+  // 4. Rastreamento no Analytics
   const trackClick = (label) => {
     if (typeof gtag === 'function') {
       gtag('event', 'click_agendamento', {
