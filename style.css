@@ -102,10 +102,11 @@ nav a:hover {
   color: var(--accent-color);
 }
 
-/* BOTÕES */
+/* BOTÕES (REMOCAO DE SUBLINHADO E NOVOS ESTILOS) */
 .btn-primary {
   background-color: var(--primary-color);
   color: #ffffff !important;
+  text-decoration: none !important; /* Remove qualquer sublinhado */
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
@@ -119,12 +120,39 @@ nav a:hover {
   background-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  text-decoration: none !important;
 }
 
 .btn-lg {
   padding: 14px 28px;
   font-size: 1rem;
   border-radius: 10px;
+}
+
+/* BOTÃO FLUTUANTE */
+.btn-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--accent-color);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.btn-floating:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
 }
 
 /* ==========================================================================
@@ -380,7 +408,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   FAQ (DESIGN PREMIUM / DESIGN DE GRANDES SITES)
+   FAQ
    ========================================================================== */
 .faq-container {
   max-width: 800px;
@@ -496,7 +524,7 @@ footer {
    ========================================================================== */
 @media (max-width: 768px) {
   nav ul {
-    display: none; /* Menu simplificado no mobile */
+    display: none;
   }
 
   .hero-container,
@@ -513,5 +541,12 @@ footer {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+
+  .btn-floating {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 20px;
+    font-size: 0.88rem;
   }
 }
