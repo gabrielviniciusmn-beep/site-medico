@@ -16,6 +16,7 @@
   --border-color: #e2e8f0;
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 4px 14px rgba(37, 99, 235, 0.25);
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-serif: 'Playfair Display', serif;
 }
@@ -90,7 +91,7 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
+  text-decoration: none !important; /* Remove qualquer sublinhado */
   color: var(--text-dark);
   font-weight: 500;
   font-size: 0.95rem;
@@ -101,29 +102,34 @@ nav a:hover {
   color: var(--accent-color);
 }
 
+/* BOTÃO DE AGENDAMENTO (DESIGN MODERNO & PREMIUM) */
 .btn-primary {
-  background-color: var(--primary-color);
-  color: #fff !important;
-  padding: 11px 24px;
-  border-radius: 50px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 12px 26px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  box-shadow: 0 4px 14px rgba(15, 44, 89, 0.2);
+  box-shadow: var(--shadow-button);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-color);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(15, 44, 89, 0.3);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 .btn-lg {
-  padding: 15px 32px;
+  padding: 16px 34px;
   font-size: 1.05rem;
+  border-radius: 12px;
 }
 
 /* HERO SECTION */
