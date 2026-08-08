@@ -50,7 +50,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
   z-index: 100;
@@ -107,10 +107,11 @@ nav a:hover {
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff !important;
   text-decoration: none !important;
-  padding: 12px 26px;
+  padding: 12px 24px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
+  white-space: nowrap; /* Impede a quebra de linha */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
@@ -134,7 +135,7 @@ nav a:hover {
 
 /* HERO SECTION */
 .hero {
-  padding: 100px 0 80px 0;
+  padding: 80px 0;
   background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 50%),
               linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
@@ -453,31 +454,40 @@ footer {
   opacity: 0.7;
 }
 
-/* RESPONSIVIDADE PARA CELULAR */
+/* AJUSTES EXCLUSIVOS PARA TELA DE CELULAR */
 @media (max-width: 768px) {
   header {
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
-  /* Oculta apenas os links de texto do menu no celular */
-  nav ul li:not(:last-child) {
-    display: none;
+  .logo-title {
+    font-size: 1.25rem;
   }
 
-  /* Mantém o botão de agendar visível e compacto no topo */
+  .logo-sub {
+    font-size: 0.68rem;
+  }
+
   nav ul {
     display: flex;
     gap: 0;
   }
 
+  /* Oculta os links do menu em texto */
+  nav ul li:not(:last-child) {
+    display: none;
+  }
+
+  /* Ajusta o botão para caber perfeitamente no topo sem quebrar linha */
   nav .btn-primary {
-    padding: 8px 16px;
-    font-size: 0.85rem;
+    padding: 8px 14px;
+    font-size: 0.8rem;
     border-radius: 8px;
+    white-space: nowrap;
   }
 
   .hero {
-    padding: 60px 0 40px 0;
+    padding: 50px 0 30px 0;
   }
 
   .hero-container, .sobre-grid {
@@ -486,7 +496,7 @@ footer {
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .hero-features {
