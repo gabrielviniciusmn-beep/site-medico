@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // 2. FUNCIONALIDADE DO FAQ (Abre e fecha as perguntas)
+  // 2. FUNCIONALIDADE DO FAQ
   const faqQuestions = document.querySelectorAll('.faq-question');
   
   faqQuestions.forEach(question => {
@@ -32,12 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const faqItem = question.parentElement;
       const isActive = faqItem.classList.contains('active');
       
-      // Fecha todos os itens abertos
       document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
       });
 
-      // Se não estava ativo, abre o item clicado
       if (!isActive) {
         faqItem.classList.add('active');
       }
