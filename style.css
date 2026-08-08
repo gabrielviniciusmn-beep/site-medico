@@ -111,7 +111,7 @@ nav a:hover {
   border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
-  white-space: nowrap; /* Impede a quebra de linha */
+  white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
@@ -215,7 +215,7 @@ nav a:hover {
 /* SOBRE */
 .sobre-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 60px;
   align-items: center;
 }
@@ -357,7 +357,7 @@ nav a:hover {
   color: var(--primary-color);
 }
 
-/* FAQ (PERGUNTAS FREQUENTES) */
+/* FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -454,7 +454,7 @@ footer {
   opacity: 0.7;
 }
 
-/* AJUSTES EXCLUSIVOS PARA TELA DE CELULAR */
+/* RESPONSIVIDADE PARA CELULAR */
 @media (max-width: 768px) {
   header {
     padding: 10px 0;
@@ -473,12 +473,10 @@ footer {
     gap: 0;
   }
 
-  /* Oculta os links do menu em texto */
   nav ul li:not(:last-child) {
     display: none;
   }
 
-  /* Ajusta o botão para caber perfeitamente no topo sem quebrar linha */
   nav .btn-primary {
     padding: 8px 14px;
     font-size: 0.8rem;
@@ -490,9 +488,26 @@ footer {
     padding: 50px 0 30px 0;
   }
 
-  .hero-container, .sobre-grid {
+  .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* Faz a imagem de atendimento aparecer antes do texto no celular */
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sobre-img-order {
+    order: 1;
+    margin-bottom: 25px;
+  }
+
+  .sobre-card {
+    order: 2;
   }
 
   .hero-text h1 {
