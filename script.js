@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 5. RASTREAMENTO DE CLIQUES DO GOOGLE ANALYTICS (GTAG) ---
   const btnHeroAgendar = document.getElementById('btn-hero-agendar');
   const btnNavAgendar = document.getElementById('btn-nav-agendar');
+  const btnFloat = document.getElementById('btn-whatsapp-float');
   const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
 
   if (typeof gtag === 'function') {
@@ -133,6 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
         gtag('event', 'click', {
           'event_category': 'CTA',
           'event_label': 'Nav Agendar Consulta'
+        });
+      });
+    }
+
+    if (btnFloat) {
+      btnFloat.addEventListener('click', () => {
+        gtag('event', 'click', {
+          'event_category': 'Contact',
+          'event_label': 'WhatsApp Float Click'
         });
       });
     }
