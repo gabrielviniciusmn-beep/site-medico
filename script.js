@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         // Compensação para a altura do cabeçalho fixo
-        const headerOffset = 80;
+        const headerOffset = 100;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; // Velocidade do arraste
+      const walk = (x - startX) * 2;
       slider.scrollLeft = scrollLeft - walk;
     });
   }
