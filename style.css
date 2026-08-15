@@ -211,13 +211,10 @@ nav a:hover {
 }
 
 .hero-container {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-text {
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 50px;
 }
 
 .hero-text .badge {
@@ -253,7 +250,6 @@ nav a:hover {
 
 .hero-features {
   display: flex;
-  justify-content: center;
   gap: 30px;
   border-top: 1px solid var(--border-color);
   padding-top: 25px;
@@ -273,21 +269,32 @@ nav a:hover {
   font-size: 1.1rem;
 }
 
+.img-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.img-frame img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
 /* ==========================================================================
    5. SOBRE
    ========================================================================== */
 .sobre-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 60px;
 }
 
 .sobre-card {
   background-color: var(--bg-white);
-  padding: 40px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  max-width: 800px;
 }
 
 .sobre-card h2 {
@@ -356,72 +363,18 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   7. AVALIAÇÕES (CARROSSEL)
+   7. WIDGET DOCTORALIA
    ========================================================================== */
-.carousel-wrapper {
-  overflow: hidden;
-  padding: 10px 0 30px 0;
-}
-
-.reviews-slider {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 15px;
-  cursor: grab;
-}
-
-.reviews-slider.active {
-  cursor: grabbing;
-}
-
-.reviews-slider::-webkit-scrollbar {
-  height: 6px;
-}
-
-.reviews-slider::-webkit-scrollbar-track {
-  background: var(--bg-light);
-  border-radius: 10px;
-}
-
-.reviews-slider::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 10px;
-}
-
-.review-card {
-  min-width: 320px;
-  max-width: 360px;
-  flex: 0 0 auto;
-  scroll-snap-align: start;
+.widget-container {
   background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 30px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
+  min-height: 350px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.stars {
-  color: #f59e0b;
-  margin-bottom: 15px;
-  font-size: 0.9rem;
-}
-
-.review-text {
-  color: var(--text-dark);
-  font-size: 0.95rem;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.review-author {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--primary-color);
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
@@ -601,7 +554,76 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   9. PERGUNTAS FREQUENTES (FAQ)
+   9. AVALIAÇÕES (CARROSSEL)
+   ========================================================================== */
+.carousel-wrapper {
+  overflow: hidden;
+  padding: 10px 0 30px 0;
+}
+
+.reviews-slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px;
+  cursor: grab;
+}
+
+.reviews-slider.active {
+  cursor: grabbing;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reviews-slider::-webkit-scrollbar-track {
+  background: var(--bg-light);
+  border-radius: 10px;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+.review-card {
+  min-width: 320px;
+  max-width: 360px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: #f59e0b;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.review-text {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   10. PERGUNTAS FREQUENTES (FAQ)
    ========================================================================== */
 .faq-container {
   max-width: 800px;
@@ -660,7 +682,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   10. RODAPÉ
+   11. RODAPÉ
    ========================================================================== */
 footer {
   background-color: var(--text-dark);
@@ -688,7 +710,7 @@ footer {
 }
 
 /* ==========================================================================
-   11. ANIMAÇÕES & RESPONSIVIDADE
+   12. ANIMAÇÕES & RESPONSIVIDADE
    ========================================================================== */
 .fade-in-element {
   opacity: 0;
@@ -702,6 +724,12 @@ footer {
 }
 
 @media (max-width: 992px) {
+  .hero-container,
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .hero-text h1 { font-size: 2.4rem; }
 }
 
@@ -716,7 +744,6 @@ footer {
     text-align: center;
   }
 
-  /* Exibe o menu no celular de forma horizontal e fácil de tocar */
   nav {
     width: 100%;
   }
