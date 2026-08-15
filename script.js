@@ -1,44 +1,150 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. ANIMAÇÃO DE ENTRADA (Fade-in ao rolar a página)
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  // --- 1. ROLAGEM SUAVE (SMOOTH SCROLL) ---
+  const navLinks = document.querySelectorAll('a[href^="#"]');
 
-  const animatedElements = document.querySelectorAll('.fade-in-element');
-  animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
-  });
-
-  // 2. FUNCIONALIDADE DO FAQ
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-      const faqItem = question.parentElement;
-      const isActive = faqItem.classList.contains('active');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
       
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
+      if (targetId === '#' || targetId === '') return;
 
-      if (!isActive) {
-        faqItem.classList.add('active');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+        
+        // Compensação para a altura do cabeçalho fixo
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
     });
   });
+
+  // --- 2. ACCORDION DO FAQ ---
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+
+    if (questionBtn) {
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Fecha todos os outros itens
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+        });
+
+        // Alterna o item atual
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+
+  // --- 3. ANIMAÇÃO AO ROLAR (INTERSECTION OBSERVER) ---
+  const fadeElements = document.querySelectorAll('.fade-in-element');
+
+  if ('IntersectionObserver' in window) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.15
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeElements.forEach(element => {
+      appearOnScroll.observe(element);
+    });
+  } else {
+    // Fallback caso o navegador não suporte IntersectionObserver
+    fadeElements.forEach(element => {
+      element.classList.add('visible');
+    });
+  }
+
+  // --- 4. ROLAGEM ARRASTANDO O MOUSE NO CARROSSEL DE AVALIAÇÕES ---
+  const slider = document.getElementById('reviewsSlider');
+
+  if (slider) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // Velocidade do arraste
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  // --- 5. RASTREAMENTO DE CLIQUES DO GOOGLE ANALYTICS (GTAG) ---
+  const btnHeroAgendar = document.getElementById('btn-hero-agendar');
+  const btnNavAgendar = document.getElementById('btn-nav-agendar');
+  const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+
+  if (typeof gtag === 'function') {
+    if (btnHeroAgendar) {
+      btnHeroAgendar.addEventListener('click', () => {
+        gtag('event', 'click', {
+          'event_category': 'CTA',
+          'event_label': 'Hero Agendar Consulta'
+        });
+      });
+    }
+
+    if (btnNavAgendar) {
+      btnNavAgendar.addEventListener('click', () => {
+        gtag('event', 'click', {
+          'event_category': 'CTA',
+          'event_label': 'Nav Agendar Consulta'
+        });
+      });
+    }
+
+    whatsappLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        gtag('event', 'click', {
+          'event_category': 'Contact',
+          'event_label': 'WhatsApp Click'
+        });
+      });
+    });
+  }
+
 });
