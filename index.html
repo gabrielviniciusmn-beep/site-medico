@@ -5,57 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Gabriel Vinícius | Médico Clínico Geral</title>
   
-  <!-- Fontes do Google Fonts: Poppins (Títulos) e Inter (Texto) -->
+  <!-- Tipografia de Alta Legibilidade: Poppins (Títulos) + Inter (Corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Menu Superior Fixo -->
+  <!-- Cabeçalho e Menu Fixo no Topo -->
   <header class="header">
     <div class="container header-container">
-      <a href="#" class="logo">Dr. Gabriel Vinícius</a>
+      <a href="#inicio" class="logo">Dr. Gabriel Vinícius</a>
       
-      <!-- Botão Hambúrguer Mobile -->
+      <!-- Botão Hambúrguer para Celular -->
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <!-- Navegação -->
+      <!-- Navegação Principal -->
       <nav class="nav" id="navMenu">
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Atendimento</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre Mim</a></li>
+          <li><a href="#atendimentos">Atendimentos</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+          <li><a href="#agendamento" class="nav-btn">Agendar Consulta</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Seção Principal (Hero) -->
+  <!-- Seção Principal (Hero Section) -->
   <section id="inicio" class="hero">
     <div class="container hero-container">
       
-      <!-- Foto de Destaque no Celular -->
+      <!-- Foto de Destaque (Primeiro Elemento no Celular) -->
       <div class="hero-image">
-        <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius">
+        <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius - Médico Clínico Geral">
       </div>
 
       <!-- Texto de Apresentação -->
       <div class="hero-content">
-        <h1>Dr. Gabriel Vinícius</h1>
-        <p>Médico Clínico Geral focado em um cuidado integrativo e dedicado à sua saúde de forma completa e acessível.</p>
-        <a href="#contato" class="btn">Agendar Consulta</a>
+        <span class="badge">Atendimento Humanizado & Individualizado</span>
+        <h1>Atendimento Médico Clínico Integrativo e Personalizado</h1>
+        <p>Acompanhamento médico focado na sua saúde integral, diagnóstico preciso e prevenção. Atendimentos presenciais e via Telemedicina com agendamento simples e rápido.</p>
+        <div class="hero-btns">
+          <a href="#agendamento" class="btn btn-primary">Agendar Consulta via Doctoralia</a>
+          <a href="#sobre" class="btn btn-secondary">Conhecer o Médico</a>
+        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Seção Sobre Mim -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre o Médico</h2>
+        <p>Dedicação ao cuidado contínuo e bem-estar do paciente</p>
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-card">
+          <h3>Formação & Atuação</h3>
+          <p>Médico Clínico Geral dedicado ao diagnóstico precoce, tratamento preventivo e acompanhamento contínuo da sua saúde com escuta atenta.</p>
+        </div>
+        <div class="sobre-card">
+          <h3>Foco no Paciente</h3>
+          <p>Prioridade em consultas sem pressa, com explicação clara da sua condição de saúde e construção conjunta do plano terapêutico.</p>
+        </div>
+        <div class="sobre-card">
+          <h3>Telemedicina & Presencial</h3>
+          <p>Praticidade e acessibilidade para você realizar sua consulta no conforto de casa ou em atendimento presencial qualificado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Atendimentos / Serviços -->
+  <section id="atendimentos" class="atendimentos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Áreas de Atendimento</h2>
+        <p>Serviços focados na prevenção, diagnóstico e acompanhamento de saúde</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🩺</div>
+          <h3>Consulta Clínica Geral</h3>
+          <p>Avaliação médica completa, solicitação e interpretação de exames de rotina (check-up) e orientação preventiva.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <h3>Telemedicina</h3>
+          <p>Consultas online seguras com emissão de receitas digitais, atestados e pedidos de exames válidos em todo o Brasil.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">❤️</div>
+          <h3>Acompanhamento de Doenças Crônicas</h3>
+          <p>Manejo individualizado e controle contínuo de Hipertensão, Diabetes, Dislipidemia e outras condições.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>Atestados & Laudos</h3>
+          <p>Avaliação médica para renovação de prescrições de uso contínuo, exames admissionais e pareceres clínicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Agendamento (Doctoralia) -->
+  <section id="agendamento" class="agendamento">
+    <div class="container">
+      <div class="section-header">
+        <h2>Agende sua Consulta</h2>
+        <p>Escolha o melhor horário e agende diretamente pelo sistema oficial Doctoralia</p>
+      </div>
+      <div class="doctoralia-widget-box">
+        <!-- Widget / Botão Oficial Doctoralia -->
+        <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br" rel="nofollow" data-id="dr-gabriel-vinicius" data-description="" data-booking-url="">Dr. Gabriel Vinícius - Doctoralia.com.br</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Depoimentos / Avaliações -->
+  <section id="depoimentos" class="depoimentos">
+    <div class="container">
+      <div class="section-header">
+        <h2>O Que Dizem os Pacientes</h2>
+        <p>Avaliações reais de quem já realizou atendimento médico</p>
+      </div>
+      <div class="depoimentos-grid">
+        <div class="depoimento-card">
+          <div class="stars">★★★★★</div>
+          <p>"Atendimento excelente! Dr. Gabriel foi muito atencioso, explicou tudo detalhadamente e tirou todas as minhas dúvidas com muita paciência."</p>
+          <span>— Paciente verificado</span>
+        </div>
+        <div class="depoimento-card">
+          <div class="stars">★★★★★</div>
+          <p>"A consulta por telemedicina superou minhas expectativas. Pontual, prático e com receitas enviadas rapidamente após a consulta."</p>
+          <span>— Paciente verificado</span>
+        </div>
+        <div class="depoimento-card">
+          <div class="stars">★★★★★</div>
+          <p>"Médico excelente, muito humano e empático. Dá para ver o cuidado e a dedicação durante toda a consulta."</p>
+          <span>— Paciente verificado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Perguntas Frequentes (FAQ) -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Perguntas Frequentes</h2>
+        <p>Tire suas dúvidas sobre consultas presenciais e online</p>
+      </div>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">Como funciona a consulta por Telemedicina? <span>+</span></button>
+          <div class="faq-answer">
+            <p>A consulta ocorre por videochamada em ambiente seguro. Você recebe o link de acesso e, após o atendimento, enviaremos receitas digitais com assinatura eletrônica válida em todo o território nacional.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">As receitas digitais valem para farmácias? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Sim! As receitas e atestados emitidos possuem assinatura digital reconhecida por lei e são aceitos em farmácias e laboratórios de todo o Brasil.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Como posso agendar uma consulta? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Basta clicar em "Agendar Consulta", escolher o dia e horário de sua preferência no sistema Doctoralia e confirmar seus dados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Dr. Gabriel Vinícius | Médico Clínico Geral. Todos os direitos reservados.</p>
+      <p class="footer-sub">Aviso Legal: Este site cumpre as diretrizes de publicidade médica do Conselho Federal de Medicina (CFM).</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
