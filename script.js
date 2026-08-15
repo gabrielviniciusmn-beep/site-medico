@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (targetElement) {
         e.preventDefault();
         
-        // Compensação para a altura do cabeçalho fixo
         const headerOffset = 100;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -37,12 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
       questionBtn.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
 
-        // Fecha todos os outros itens
         faqItems.forEach(otherItem => {
           otherItem.classList.remove('active');
         });
 
-        // Alterna o item atual
         if (!isActive) {
           item.classList.add('active');
         }
@@ -73,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
       appearOnScroll.observe(element);
     });
   } else {
-    // Fallback caso o navegador não suporte IntersectionObserver
     fadeElements.forEach(element => {
       element.classList.add('visible');
     });
@@ -124,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btnHeroAgendar.addEventListener('click', () => {
         gtag('event', 'click', {
           'event_category': 'CTA',
-          'event_label': 'Hero Agendar Consulta'
+          'event_label': 'Hero Agendar Doctoralia'
         });
       });
     }
@@ -133,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btnNavAgendar.addEventListener('click', () => {
         gtag('event', 'click', {
           'event_category': 'CTA',
-          'event_label': 'Nav Agendar Consulta'
+          'event_label': 'Nav WhatsApp'
         });
       });
     }
