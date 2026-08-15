@@ -3,43 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Gabriel Vinícius | Médico Clínico Geral & Telemedicina</title>
-
-  <!-- Google Analytics (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8B9LKDKGT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-X8B9LKDKGT');
-  </script>
-
-  <!-- Google Fonts & Font Awesome Icons -->
+  <title>Dr. Gabriel Vinícius | Médico Clínico Geral - Telemedicina</title>
+  
+  <!-- Fontes Google: Inter + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO E NAVEGAÇÃO -->
+  <!-- CABEÇALHO / NAVEGAÇÃO -->
   <header>
     <div class="container nav-container">
-      <a href="#" class="logo">
+      <div class="logo">
         <span class="logo-title">Dr. Gabriel Vinícius</span>
-        <span class="logo-sub">CRM 40886</span>
-      </a>
+        <span class="logo-sub">Médico Clínico Geral</span>
+      </div>
       <nav>
         <ul>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#servicos">Atendimento</a></li>
-          <li><a href="#opinioes">Avaliações</a></li>
-          <li><a href="https://wa.me/5562984636597" target="_blank" class="nav-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
           <li><a href="#faq">Dúvidas</a></li>
-          <li><a href="#agendamento" class="btn-primary" id="btn-nav-agendar">Agendar Consulta</a></li>
+          <li><a href="#agendar" class="nav-whatsapp" id="btn-nav-agendar"><i class="fab fa-whatsapp"></i> Agendar</a></li>
         </ul>
       </nav>
     </div>
@@ -49,253 +41,167 @@
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-text fade-in-element">
-        <span class="badge"><i class="fa-solid fa-laptop-medical"></i> Atendimento 100% Online</span>
-        <h1>Consulta Médica Online Rápida, Segura e Humanizada</h1>
-        <p>Atendimento médico humanizado por telemedicina. Rigor científico, atenção individualizada e praticidade para a sua rotina.</p>
-        
+        <div class="badge">
+          <i class="fas fa-laptop-medical"></i> Atendimento 100% Online (Telemedicina)
+        </div>
+        <h1>Cuidado médico completo e humanizado, onde você estiver.</h1>
+        <p>Consultas médicas online com foco na prevenção, diagnóstico e acompanhamento contínuo da sua saúde com praticidade e segurança.</p>
         <div class="cta-group">
-          <a href="#agendamento" class="btn-primary btn-lg" id="btn-hero-agendar">
-            <span>Marcar Consulta Online</span>
-            <i class="fa-solid fa-arrow-right"></i>
+          <a href="#agendar" class="btn-primary btn-lg" id="btn-hero-agendar">
+            <i class="fab fa-whatsapp"></i> Agendar Consulta Online
           </a>
         </div>
-
         <div class="hero-features">
           <div class="feature-item">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Plataforma Segura</span>
+            <i class="fas fa-check-circle"></i>
+            <span>Receitas e Exames Digitais</span>
           </div>
           <div class="feature-item">
-            <i class="fa-solid fa-file-signature"></i>
-            <span>Receitas e Atestados Válidos</span>
+            <i class="fas fa-check-circle"></i>
+            <span>Atendimento em Todo o Brasil</span>
           </div>
-        </div>
-      </div>
-
-      <div class="hero-img fade-in-element">
-        <div class="img-frame">
-          <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius - Médico Clínico Geral">
         </div>
       </div>
     </div>
   </section>
 
   <!-- SOBRE -->
-  <section id="sobre" class="section">
-    <div class="container">
-      <div class="sobre-grid">
-        <div class="sobre-card fade-in-element">
-          <span class="section-tag">Perfil Profissional</span>
-          <h2>Dr. Gabriel Vinícius</h2>
-          <p class="crm-info">CRM 40886</p>
-          
-          <p class="sobre-text">
-            Médico dedicado ao acompanhamento clínico individualizado. O atendimento é estruturado para oferecer escuta atenta, diagnóstico fundamentado e planos terapêuticos integrais.
-          </p>
-          <p class="sobre-text">
-            Por meio da telemedicina, você recebe assistência médica completa para queixas agudas, controle de doenças crônicas ou check-ups de rotina com praticidade e rigor técnico.
-          </p>
-        </div>
-
-        <div class="sobre-img fade-in-element">
-          <div class="img-frame">
-            <img src="assets/atendimento.png" alt="Dr. Gabriel Vinícius em consulta médica">
-          </div>
-        </div>
+  <section id="sobre" class="section bg-light">
+    <div class="container sobre-grid">
+      <div class="sobre-card fade-in-element">
+        <h2>Dr. Gabriel Vinícius</h2>
+        <p class="crm-info">Médico Clínico Geral</p>
+        <p class="sobre-text">
+          Dedicado ao cuidado integral da saúde, utilizo a telemedicina para oferecer consultas acessíveis, ágeis e humanizadas. O foco do meu atendimento é entender o paciente como um todo, prevenindo doenças e promovendo bem-estar contínuo.
+        </p>
+        <p class="sobre-text">
+          Através da consulta online, você recebe atendimento médico de qualidade no conforto da sua casa, com emissão de receitas, atestados e solicitações de exames validados nacionalmente.
+        </p>
       </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="section bg-light">
+  <section id="servicos" class="section">
     <div class="container">
-      <div class="section-header fade-in-element">
-        <span class="section-tag">Serviços Médicos</span>
+      <div class="section-header">
+        <span class="section-tag">Serviços</span>
         <h2>Como Posso Te Ajudar</h2>
-        <p>Tudo o que você precisa em uma consulta médica completa e acessível.</p>
+        <p>Acompanhamento médico abrangente focado nas suas necessidades.</p>
       </div>
-
       <div class="cards-grid">
         <div class="card fade-in-element">
-          <div class="card-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
-          <h3>Receitas Médicas Digitais</h3>
-          <p>Emissão e renovação de prescrições médicas digitais com validação nacional por QR Code, aceitas em farmácias de todo o Brasil.</p>
+          <div class="card-icon"><i class="fas fa-stethoscope"></i></div>
+          <h3>Consulta de Rotina</h3>
+          <p>Check-up geral, avaliação de exames preventivos e orientações de promoção à saúde.</p>
         </div>
-
         <div class="card fade-in-element">
-          <div class="card-icon"><i class="fa-solid fa-file-medical"></i></div>
-          <h3>Atestados Médicos</h3>
-          <p>Avaliação médica detalhada com emissão de atestados e laudos digitais oficializados após análise clínica criteriosa.</p>
+          <div class="card-icon"><i class="fas fa-pills"></i></div>
+          <h3>Renovação de Receitas</h3>
+          <p>Acompanhamento de tratamentos contínuos e emissão de receitas médicas digitais.</p>
         </div>
-
         <div class="card fade-in-element">
-          <div class="card-icon"><i class="fa-solid fa-vials"></i></div>
-          <h3>Solicitação de Exames</h3>
-          <p>Pedidos de exames laboratoriais e de imagem para diagnóstico preciso ou acompanhamento preventivo periódico.</p>
-        </div>
-
-        <div class="card fade-in-element">
-          <div class="card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-          <h3>Check-up e Prevenção</h3>
-          <p>Orientações de saúde, tratamento de sintomas agudos e suporte para hábitos de vida saudáveis e bem-estar contínuo.</p>
+          <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
+          <h3>Sintomas Agudos</h3>
+          <p>Avaliação médica para quadros leves e orientações para condutas imediatas.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AVALIAÇÕES DOS PACIENTES -->
-  <section id="opinioes" class="section">
+  <!-- AVALIAÇÕES -->
+  <section id="avaliacoes" class="section bg-light">
     <div class="container">
-      <div class="section-header fade-in-element">
-        <span class="section-tag">Avaliações</span>
-        <h2>O que dizem os pacientes</h2>
-        <p>Depoimentos reais de consultas realizadas via Telemedicina (deslize para ver mais)</p>
+      <div class="section-header">
+        <span class="section-tag">Depoimentos</span>
+        <h2>O Que Dizem os Pacientes</h2>
+        <p>A experiência de quem já realizou atendimento por telemedicina.</p>
       </div>
-
-      <div class="carousel-wrapper fade-in-element">
+      <div class="carousel-wrapper">
         <div class="reviews-slider" id="reviewsSlider">
-
           <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Excelente atendimento! Em um momento de dificuldade, encontrei um profissional extremamente competente, humano e acolhedor. Mesmo sendo uma consulta online, me senti muito bem assistida. Recebi orientações claras, apoio e direcionamento."</p>
-            <div class="review-author">Laura Menezes</div>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Atendimento excelente! Muito atencioso e pontual. Praticidade incrível fazer a consulta sem sair de casa."</p>
+            <span class="review-author">Paciente Verificado</span>
           </div>
-
           <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"O Gabriel se mostrou um ótimo profissional, onde conseguiu me tranquilizar diante de uma situação em que me encontrava! É um excelente doutor, tem se mostrado capaz e me parece muito bem capacitado com aquilo que faz."</p>
-            <div class="review-author">Jezreel Santana</div>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Explicou detalhadamente meus exames e enviou a receita digital logo após a consulta. Recomendo muito!"</p>
+            <span class="review-author">Paciente Verificado</span>
           </div>
-
           <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Ótimo atendimento, médico muito prestativo e tira todas as dúvidas."</p>
-            <div class="review-author">Raissa</div>
+            <div class="stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"A telemedicina facilitou muito minha rotina. O Dr. Gabriel é super seguro e empático nas orientações."</p>
+            <span class="review-author">Paciente Verificado</span>
           </div>
-
-          <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Excelente dedicação, responsabilidade e respeito à saúde."</p>
-            <div class="review-author">Amilton</div>
-          </div>
-
-          <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Fiz uma consulta com Dr Gabriel, foi excelente super indico."</p>
-            <div class="review-author">Ioneide Ferreira</div>
-          </div>
-
-          <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Ótima opção, para agilizar exames de rotina ou alguma emergência também."</p>
-            <div class="review-author">Neuza Elene</div>
-          </div>
-
-          <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Atencioso, prestativo e acolhedor sabe investigar o problema."</p>
-            <div class="review-author">Iron</div>
-          </div>
-
-          <div class="review-card">
-            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-            <p class="review-text">"Foi excelente, ótimo profissional. Atendeu todas as minhas necessidades, muito atencioso."</p>
-            <div class="review-author">K.C.O.A.</div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO WHATSAPP (CHIQUE & MODERNA) -->
-  <section id="whatsapp-contato" class="section bg-light">
+  <!-- CARD WHATSAPP / AGENDAMENTO -->
+  <section id="agendar" class="section">
     <div class="container">
       <div class="whatsapp-card fade-in-element">
         <div class="whatsapp-card-glow"></div>
         <div class="whatsapp-content">
           <div class="whatsapp-icon-wrapper">
             <div class="icon-pulse"></div>
-            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fab fa-whatsapp"></i>
           </div>
-          <span class="whatsapp-badge">Atendimento Prioritário</span>
-          <h2>Agilidade & Atendimento Humanizado</h2>
-          <p>Precisa de suporte rápido, dúvidas sobre consultas ou assistência direta com sua receita? Fale com nossa equipe em poucos segundos.</p>
-          <a href="https://wa.me/5562984636597" target="_blank" class="btn-whatsapp-premium">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>Iniciar Conversa no WhatsApp</span>
-            <i class="fa-solid fa-arrow-right-long arrow-icon"></i>
+          <span class="whatsapp-badge">Agendamento Simplificado</span>
+          <h2>Marque sua consulta online</h2>
+          <p>Clique no botão abaixo para conversar pelo WhatsApp e escolher o melhor horário para seu atendimento por telemedicina.</p>
+          <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium">
+            <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp <i class="fas fa-arrow-right arrow-icon"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PERGUNTAS FREQUENTES (FAQ) -->
-  <section id="faq" class="section">
+  <!-- FAQ -->
+  <section id="faq" class="section bg-light">
     <div class="container">
-      <div class="section-header fade-in-element">
-        <span class="section-tag">Tire suas dúvidas</span>
+      <div class="section-header">
+        <span class="section-tag">FAQ</span>
         <h2>Perguntas Frequentes</h2>
-        <p>Respostas rápidas para as principais dúvidas sobre o atendimento online</p>
+        <p>Tire suas dúvidas sobre o funcionamento da consulta por telemedicina.</p>
       </div>
-
-      <div class="faq-container fade-in-element">
+      <div class="faq-container">
         <div class="faq-item">
           <button class="faq-question">
-            <span>Como funciona a consulta médica online?</span>
-            <i class="fa-solid fa-chevron-down"></i>
+            Como funciona a consulta online por telemedicina?
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>A consulta é realizada via videochamada em ambiente seguro e sigiloso. Você pode se conectar usando seu computador ou celular, recebendo avaliação médica, orientações, receitas e exames diretamente por e-mail.</p>
+            <p>A consulta ocorre via videochamada segura. No horário agendado, você acessa o link enviado por mensagem para conversar com o médico.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
-            <span>A receita médica digital é aceita em qualquer farmácia?</span>
-            <i class="fa-solid fa-chevron-down"></i>
+            As receitas e exames possuem validade em todo o Brasil?
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Sim! As receitas são emitidas com assinatura digital qualificada (com QR Code do ITI), com validade legal em todo o território nacional para farmácias físicas e online.</p>
+            <p>Sim! Todas as receitas, atestados e pedidos de exames são assinados digitalmente com certificado ICP-Brasil, aceitos em farmácias e laboratórios de todo o país.</p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
-            <span>Como faço para agendar um horário?</span>
-            <i class="fa-solid fa-chevron-down"></i>
+            Quais equipamentos preciso ter para a consulta?
+            <i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
-            <p>Você pode agendar diretamente no módulo ao final desta página escolhendo o melhor dia e horário disponível no calendário oficial da Doctoralia.</p>
+            <p>Apenas um celular ou computador com câmera, microfone e uma boa conexão com a internet.</p>
           </div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>O atendimento emite atestados e pedidos de exames?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Sim, sempre que houver indicação clínica após a avaliação no atendimento, são fornecidos atestados, laudos e solicitações de exames laboratoriais ou de imagem válidos em todo o país.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO DE AGENDAMENTO (DOCTORALIA) -->
-  <section id="agendamento" class="section bg-light">
-    <div class="container">
-      <div class="section-header fade-in-element">
-        <span class="section-tag">Agendamento Online</span>
-        <h2>Teleconsulta</h2>
-        <p>Agende seu horário diretamente pelo módulo oficial abaixo:</p>
-      </div>
-
-      <div class="widget-container fade-in-element">
-        <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania" rel="nofollow" data-zlw-doctor="gabriel-vinicius-2" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Marque uma consulta</a>
-        <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
       </div>
     </div>
   </section>
@@ -305,20 +211,21 @@
     <div class="container footer-container">
       <div class="footer-brand">
         <span class="footer-title">Dr. Gabriel Vinícius</span>
-        <p>CRM 40886 · Atendimento por Telemedicina</p>
+        <p>Médico Clínico Geral | Atendimento por Telemedicina</p>
       </div>
       <div class="footer-copy">
-        <p>&copy; 2026 Todos os direitos reservados.</p>
+        <p>&copy; Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-  <a href="https://wa.me/5562984636597" target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp" id="btn-whatsapp-float">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span class="float-tooltip">Fale Conosco</span>
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" class="whatsapp-float" id="btn-whatsapp-float" aria-label="Falar pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="float-tooltip">Agendar Consulta</span>
   </a>
 
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
