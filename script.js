@@ -1,41 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ==========================================
-  // MENU MOBILE (HAMBÚRGUER)
-  // ==========================================
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
+  // 1. Controle do Accordion do FAQ
+  const faqItems = document.querySelectorAll(".faq-item");
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
+  faqItems.forEach((item) => {
+    const questionButton = item.querySelector(".faq-question");
 
-    // Fechar o menu ao clicar em qualquer link
-    document.querySelectorAll("nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-      });
-    });
-  }
+    questionButton.addEventListener("click", () => {
+      const isActive = item.classList.contains("active");
 
-  // ==========================================
-  // EFEITO DE ROLAGEM (SCROLL FADE)
-  // ==========================================
-  const observerOptions = {
-    threshold: 0.1
-  };
+      // Fecha todos os outros itens
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+        const otherAnswer = otherItem.querySelector(".faq-answer");
+        if (otherAnswer) otherAnswer.style.maxHeight = null;
+      });
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        // Opcional: parar de observar após animar
-        // observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+      // Abre ou fecha o item clicado
+      if (!isActive) {
+        item.classList.add("active");
+        const answer = item.querySelector(".faq-answer");
+        if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
 
-  document.querySelectorAll(".scroll-fade").forEach(el => {
-    observer.observe(el);
-  });
+  // 2. Controle do Menu Hambúrguer Mobile
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navLinks = navMenu ? navMenu.querySelectorAll("a") : [];
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      const icon = menuToggle.querySelector("i");
+      if (icon) {
+        if (navMenu.classList.contains("open")) {
+          icon.className = "fas fa-times";
+        } else {
+          icon.className = "fas fa-bars";
+        }
+      }
+    });
+
+    // Fecha o menu ao clicar em qualquer link da lista
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        const icon = menuToggle.querySelector("i");
+        if (icon) icon.className = "fas fa-bars";
+      });
+    });
+  }
 });
