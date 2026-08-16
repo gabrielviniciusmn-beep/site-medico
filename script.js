@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar Efeito de Rolagem (AOS)
+  AOS.init({
+    once: true,
+    offset: 50,
+    duration: 800,
+    easing: 'ease-out-cubic'
+  });
+
   // 1. Controle do Accordion do FAQ
   const faqItems = document.querySelectorAll(".faq-item");
 
