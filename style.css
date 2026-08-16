@@ -130,7 +130,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION & SUBTÍTULO PREMIUM
    ========================================================================== */
 .hero {
   padding: 160px 0 100px 0;
@@ -166,29 +166,12 @@ nav a:hover {
   margin-bottom: 24px;
 }
 
-/* Tópicos com Ícones Verdes */
-.hero-benefits {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.hero-subtitle {
+  font-size: 1.08rem;
+  color: var(--text-light);
+  line-height: 1.7;
   margin-bottom: 30px;
-  text-align: left;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 1rem;
-  color: var(--text-main);
-  line-height: 1.45;
-}
-
-.check-green {
-  color: var(--accent-color);
-  font-size: 1.25rem;
-  margin-top: 2px;
-  flex-shrink: 0;
+  font-weight: 400;
 }
 
 .cta-group {
@@ -360,7 +343,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   WIDGET DOCTORALIA
+   WIDGET DOCTORALIA (OTIMIZADO PARA MOBILE)
    ========================================================================== */
 .widget-container {
   background-color: #ffffff;
@@ -370,6 +353,13 @@ nav a:hover {
   border: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.widget-container iframe, 
+.widget-container div {
+  max-width: 100%;
 }
 
 /* ==========================================================================
@@ -450,11 +440,6 @@ nav a:hover {
 /* ==========================================================================
    AVALIAÇÕES
    ========================================================================== */
-.carousel-wrapper {
-  overflow: hidden;
-  padding: 10px 0;
-}
-
 .reviews-slider {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -882,7 +867,6 @@ nav a:hover {
     width: 100%;
   }
 
-  /* Otimização de Primeira Impressão Mobile */
   .hero {
     padding: 100px 0 50px 0;
   }
@@ -893,27 +877,24 @@ nav a:hover {
     margin-bottom: 18px;
   }
 
+  .hero-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 24px;
+  }
+
   .badge {
     margin-bottom: 14px;
     font-size: 0.78rem;
     padding: 5px 12px;
   }
 
-  .hero-benefits {
-    gap: 10px;
-    margin-bottom: 22px;
-  }
-
-  .benefit-item {
-    font-size: 0.92rem;
-  }
-
-  .check-green {
-    font-size: 1.1rem;
-  }
-
   .hero-container {
     gap: 30px;
+  }
+
+  .widget-container {
+    padding: 15px 10px;
+    border-radius: var(--radius-sm);
   }
 
   .footer-top-grid {
@@ -924,22 +905,5 @@ nav a:hover {
     flex-direction: column;
     gap: 12px;
     text-align: center;
-  }
-}
-/* ==========================================================================
-   SUBTÍTULO EM TEXTO (ESTILO PREMIUM)
-   ========================================================================== */
-.hero-subtitle {
-  font-size: 1.08rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  margin-bottom: 30px;
-  font-weight: 400;
-}
-
-@media (max-width: 768px) {
-  .hero-subtitle {
-    font-size: 0.98rem;
-    margin-bottom: 24px;
   }
 }
