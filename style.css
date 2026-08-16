@@ -907,3 +907,20 @@ nav a:hover {
     text-align: center;
   }
 }
+/* ==========================================================================
+   CORREÇÃO DE LARGURA DO WIDGET DOCTORALIA NO MOBILE
+   ========================================================================== */
+.widget-container iframe, 
+.widget-container #zl-url, 
+.widget-container div {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .widget-container {
+    padding: 15px 8px !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+}
