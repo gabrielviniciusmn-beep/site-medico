@@ -908,11 +908,24 @@ nav a:hover {
   }
 }
 /* ==========================================================================
-   CORREÇÃO DE LARGURA DO WIDGET DOCTORALIA NO MOBILE
+   CORREÇÃO DEFINITIVA DE LARGURA DO WIDGET DOCTORALIA NO MOBILE
    ========================================================================== */
-.widget-container iframe, 
-.widget-container #zl-url, 
-.widget-container div {
+html, body {
+  overflow-x: hidden !important;
+}
+
+.widget-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+  padding: 0 10px !important;
+}
+
+.widget-container iframe,
+.widget-container div,
+.widget-container span,
+.widget-container a {
   max-width: 100% !important;
   box-sizing: border-box !important;
 }
