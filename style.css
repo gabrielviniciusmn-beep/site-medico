@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & VARIÁVEIS GLOBAIS
+   RESET & VARIÁVEIS GLOBAIS (CORRIGIDO PARA MOBILE)
    ========================================================================== */
 :root {
   --primary-color: #0284c7;
@@ -19,15 +19,16 @@
   --transition-fast: 0.25s ease;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+/* Proteção global contra estouro de largura */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -36,12 +37,16 @@ body {
   background-color: var(--bg-body);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -205,6 +210,7 @@ nav a:hover {
 .hero-img {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .img-frame {
@@ -343,7 +349,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   WIDGET DOCTORALIA (OTIMIZADO PARA MOBILE)
+   WIDGET DOCTORALIA (AJUSTADO PARA MOBILE)
    ========================================================================== */
 .widget-container {
   background-color: #ffffff;
@@ -353,13 +359,14 @@ nav a:hover {
   border: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  overflow: hidden;
 }
 
-.widget-container iframe, 
-.widget-container div {
-  max-width: 100%;
+#zl-url {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 /* ==========================================================================
@@ -905,35 +912,5 @@ nav a:hover {
     flex-direction: column;
     gap: 12px;
     text-align: center;
-  }
-}
-/* ==========================================================================
-   CORREÇÃO DEFINITIVA DE LARGURA DO WIDGET DOCTORALIA NO MOBILE
-   ========================================================================== */
-html, body {
-  overflow-x: hidden !important;
-}
-
-.widget-container {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  box-sizing: border-box !important;
-  padding: 0 10px !important;
-}
-
-.widget-container iframe,
-.widget-container div,
-.widget-container span,
-.widget-container a {
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-@media (max-width: 768px) {
-  .widget-container {
-    padding: 15px 8px !important;
-    width: 100% !important;
-    overflow: hidden !important;
   }
 }
