@@ -1,316 +1,156 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Gabriel Vinícius | Médico Clínico Geral - Telemedicina</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Gabriel Vinícius | Médico Clínico Geral</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO / NAVEGAÇÃO -->
-  <header>
+<!-- HEADER -->
+<header>
     <div class="container nav-container">
-      <div class="logo">
-        <span class="logo-title">Dr. Gabriel Vinícius</span>
-        <span class="logo-sub">Médico Clínico Geral</span>
-      </div>
-
-      <!-- Botão Hambúrguer Mobile -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav id="navMenu">
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#servicos">Atendimento</a></li>
-          <li><a href="#avaliacoes">Avaliações</a></li>
-          <li><a href="#agendar">Agendar</a></li>
-          <li><a href="#faq">Dúvidas</a></li>
-          <li><a href="https://wa.me/5562984636597" target="_blank" class="nav-whatsapp" id="btn-nav-agendar"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-        </ul>
-      </nav>
+        <div class="logo">
+            <span class="logo-title">Dr. Gabriel Vinícius</span>
+            <span class="logo-sub">MÉDICO CLÍNICO GERAL</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="https://wa.me/5562999999999" class="nav-whatsapp"><i class="fab fa-whatsapp"></i> Agendar</a></li>
+            </ul>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-text fade-in-element">
-        <div class="badge">
-          <i class="fas fa-laptop-medical"></i> Atendimento 100% On-line (Telemedicina)
-        </div>
-        <h1>Cuidado médico completo e dedicado sem você sair de casa.</h1>
-
-        <!-- Tópicos em destaque com ícones verdes -->
-        <div class="hero-benefits">
-          <div class="benefit-item">
-            <i class="fas fa-check-circle check-green"></i>
-            <span><strong>Consultas por videochamada</strong> com foco na prevenção e diagnóstico preciso</span>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-check-circle check-green"></i>
-            <span><strong>Receita & Atestado Digital</strong> com QR Code válidos em todo o Brasil</span>
-          </div>
-          <div class="benefit-item">
-            <i class="fas fa-check-circle check-green"></i>
-            <span><strong>Acompanhamento contínuo</strong> e personalizado do seu bem-estar</span>
-          </div>
-        </div>
-
-        <div class="cta-group">
-          <a href="#agendar" class="btn-primary btn-lg" id="btn-hero-agendar">
-            <i class="fas fa-calendar-check"></i> Agendar Teleconsulta no Doctoralia
-          </a>
-        </div>
-      </div>
-      <div class="hero-img fade-in-element">
-        <div class="img-frame">
-          <img src="assets/dr-gabriel.png" alt="Dr. Gabriel Vinícius - Médico Clínico Geral">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre" class="section bg-light">
-    <div class="container sobre-grid">
-      <div class="sobre-img fade-in-element">
-        <div class="img-frame">
-          <img src="assets/atendimento.png" alt="Atendimento On-line Dr. Gabriel Vinícius">
-        </div>
-      </div>
-      <div class="sobre-card fade-in-element">
-        <h2>Dr. Gabriel Vinícius</h2>
-        <p class="crm-info">Médico Clínico Geral | CRM 40886</p>
-        <p class="sobre-text">
-          Dedicado ao cuidado integral da saúde, ofereço atendimento médico 100% on-line via telemedicina, combinando praticidade, escuta ativa e diagnósticos precisos para pacientes de todo o Brasil.
-        </p>
-        <p class="sobre-text">
-          O foco do meu trabalho é entender cada paciente individualmente, promovendo prevenção e bem-estar, com a praticidade de realizar sua consulta no conforto da sua casa e receber prescrições válidas nacionalmente.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Serviços On-line</span>
-        <h2>Como Posso Te Ajudar</h2>
-        <p>Acompanhamento médico abrangente focado nas suas necessidades via telemedicina.</p>
-      </div>
-      <div class="cards-grid">
-        <div class="card fade-in-element">
-          <div class="card-icon"><i class="fas fa-laptop-medical"></i></div>
-          <h3>Teleconsulta Geral</h3>
-          <p>Avaliação médica completa por videochamada, check-up geral e investigação de sintomas.</p>
-        </div>
-        <div class="card fade-in-element">
-          <div class="card-icon"><i class="fas fa-file-medical-alt"></i></div>
-          <h3>Renovação de Receitas</h3>
-          <p>Acompanhamento de tratamentos contínuos e emissão de receitas digitais válidas em todo o país.</p>
-        </div>
-        <div class="card fade-in-element">
-          <div class="card-icon"><i class="fas fa-notes-medical"></i></div>
-          <h3>Avaliação de Exames</h3>
-          <p>Análise detalhada de exames laboratoriais e de imagem com orientações preventivas personalizadas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AGENDAMENTO DOCTORALIA -->
-  <section id="agendar" class="section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Agendamento On-line</span>
-        <h2>Marque sua Teleconsulta no Doctoralia</h2>
-        <p>Escolha o melhor dia e horário diretamente no calendário abaixo.</p>
-      </div>
-      <div class="widget-container fade-in-element">
-        <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/gabriel-vinicius-2/medico-clinico-geral/goiania" rel="nofollow" data-zlw-doctor="gabriel-vinicius-2" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Marque uma consulta</a>
-        <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARD WHATSAPP / CONTATO DIRETO -->
-  <section class="section">
-    <div class="container">
-      <div class="whatsapp-card fade-in-element">
-        <div class="whatsapp-card-glow"></div>
-        <div class="whatsapp-content">
-          <div class="whatsapp-icon-wrapper">
-            <div class="icon-pulse"></div>
-            <i class="fab fa-whatsapp"></i>
-          </div>
-          <span class="whatsapp-badge">Dúvidas sobre a Teleconsulta?</span>
-          <h2>Atendimento Direto no WhatsApp</h2>
-          <p>Se preferir agendar diretamente com a equipe ou tirar dúvidas sobre a consulta on-line, fale conosco via WhatsApp.</p>
-          <a href="https://wa.me/5562984636597" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium">
-            <i class="fab fa-whatsapp"></i> Conversar no WhatsApp <i class="fas fa-arrow-right arrow-icon"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AVALIAÇÕES -->
-  <section id="avaliacoes" class="section bg-light">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Depoimentos</span>
-        <h2>O Que Dizem os Pacientes</h2>
-        <p>A experiência de quem já realizou acompanhamento médico por teleconsulta.</p>
-      </div>
-      <div class="carousel-wrapper">
-        <div class="reviews-slider" id="reviewsSlider">
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<!-- HERO SECTION -->
+<section id="inicio" class="hero">
+    <div class="container hero-container scroll-fade">
+        <div class="hero-text">
+            <div class="badge"><i class="fas fa-stethoscope"></i> Atendimento 100% On-line (Telemedicina)</div>
+            <h1>Cuidado médico completo e dedicado sem você sair de casa.</h1>
+            <p>Ofereço acompanhamento médico personalizado, focado na prevenção e diagnóstico preciso através da telemedicina, garantindo a sua saúde com a conveniência e agilidade que você merece.</p>
+            <div class="cta-group">
+                <a href="https://wa.me/5562999999999" class="btn-primary btn-lg"><i class="fab fa-whatsapp"></i> Agendar Teleconsulta</a>
             </div>
-            <p class="review-text">"Consulta on-line maravilhosa! Muito atencioso, pontual e explicou tudo com clareza. A receita chegou na hora no meu celular."</p>
-            <span class="review-author">Paciente Verificado</span>
-          </div>
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="review-text">"Explicou detalhadamente meus exames durante a videochamada. Um profissional humano e extremamente competente."</p>
-            <span class="review-author">Paciente Verificado</span>
-          </div>
-          <div class="review-card">
-            <div class="stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="review-text">"Excelente médico! O agendamento da teleconsulta foi super fácil e o atendimento impecável no conforto da minha casa."</p>
-            <span class="review-author">Paciente Verificado</span>
-          </div>
         </div>
-      </div>
+        <div class="hero-img">
+            <div class="img-frame"><img src="foto-individual.jpg" alt="Dr. Gabriel Vinícius"></div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
+<!-- SOBRE MIM & SEGUNDA FOTO -->
+<section id="sobre" class="section">
+    <div class="container sobre-grid scroll-fade">
+        <div class="sobre-card">
+            <h2>Sobre Mim</h2>
+            <p class="crm-info">CRM-GO 00000</p>
+            <p class="sobre-text">Médico focado em humanização e tecnologia. Através da telemedicina, conecto saúde de ponta com a rotina do paciente.</p>
+        </div>
+        <div class="img-frame"><img src="foto-atendimento.jpg" alt="Dr. Gabriel Vinícius em atendimento"></div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="section scroll-fade">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">FAQ</span>
-        <h2>Perguntas Frequentes</h2>
-        <p>Tire suas dúvidas sobre a teleconsulta médica.</p>
-      </div>
-      <div class="faq-container">
-        <div class="faq-item">
-          <button class="faq-question">
-            Como funciona a consulta médica on-line (Telemedicina)?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>A consulta é realizada via videochamada segura. No horário agendado, você se conecta pelo celular ou computador, conversa com o médico, tira todas as dúvidas e recebe as orientações necessárias.</p>
-          </div>
+        <div class="section-title">
+            <span>SERVIÇOS ON-LINE</span>
+            <h2>Como Posso Te Ajuda</h2>
+            <p>Acompanhamento médico abrangente focado nas suas necessidades via telemedicina.</p>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Como recebo minha receita, atestado ou pedido de exame?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Os documentos são emitidos com assinatura digital reconhecida e enviados diretamente para o seu WhatsApp e e-mail. São aceitos em farmácias e laboratórios de todo o Brasil.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            Posso tirar dúvidas pelo WhatsApp antes de agendar?
-            <i class="fas fa-chevron-down"></i>
-          </button>
-          <div class="faq-answer">
-            <p>Com certeza! Nosso canal do WhatsApp está disponível para auxiliá-lo com informações sobre horários, pagamentos e como se preparar para a teleconsulta.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RODAPÉ PROFISSIONAL -->
-  <footer class="footer-professional">
-    <div class="container">
-      <div class="footer-top-grid">
-        <div class="footer-col footer-about">
-          <span class="footer-brand-name">Dr. Gabriel Vinícius</span>
-          <p class="footer-spec">Médico Clínico Geral | Telemedicina</p>
-          <div class="footer-badge-crm">
-            <i class="fas fa-id-card"></i> CRM: <strong>40886</strong>
-          </div>
-          <p class="footer-bio-short">
-            Atendimento médico 100% on-line focado na prevenção, diagnósticos precisos e cuidado integral à saúde do paciente sem sair de casa.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Navegação</h4>
-          <ul class="footer-links">
-            <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre o Médico</a></li>
-            <li><a href="#servicos"><i class="fas fa-chevron-right"></i> Atendimentos On-line</a></li>
-            <li><a href="#agendar"><i class="fas fa-chevron-right"></i> Agendar Teleconsulta</a></li>
-            <li><a href="#avaliacoes"><i class="fas fa-chevron-right"></i> Depoimentos</a></li>
-            <li><a href="#faq"><i class="fas fa-chevron-right"></i> Dúvidas Frequentes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Atendimento Seguro</h4>
-          <ul class="footer-trust-list">
-            <li><i class="fas fa-laptop-medical icon-trust"></i> Teleconsulta 100% On-line</li>
-            <li><i class="fas fa-globe-americas icon-trust"></i> Atendimento em todo o Brasil</li>
-            <li><i class="fas fa-file-medical-alt icon-trust"></i> Receita Digital Válida</li>
-            <li><i class="fas fa-user-lock icon-trust"></i> Dados Protegidos (LGPD)</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4 class="footer-col-title">Agendamento Oficial</h4>
-          <p class="footer-text-sm">Agende sua teleconsulta com total segurança através da plataforma oficial Doctoralia ou diretamente via WhatsApp.</p>
-          <div class="footer-security-badge">
-            <i class="fas fa-lock"></i>
-            <div>
-              <strong>Plataforma Segura</strong>
-              <span>Telemedicina Criptografada SSL</span>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-notes-medical"></i></div>
+                <h3>Teleconsulta Geral</h3>
+                <p>Avaliação médica completa por videochamada, check-up geral e investigação de sintomas.</p>
             </div>
-          </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-file-prescription"></i></div>
+                <h3>Renovação de Receitas</h3>
+                <p>Emissão de receitas e atestados digitais com QR Code válidos em todo o Brasil.</p>
+            </div>
         </div>
-      </div>
-
-      <hr class="footer-divider">
-
-      <div class="footer-disclaimer">
-        <p><strong>Aviso Legal:</strong> As informações contidas neste site têm caráter meramente informativo e educativo e não substituem uma consulta médica presencial em casos de urgência ou emergência. Em emergências, procure o pronto-socorro mais próximo ou ligue para o SAMU (192).</p>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Dr. Gabriel Vinícius. Todos os direitos reservados.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Política de Privacidade</a>
-          <span>•</span>
-          <a href="#">Termos de Uso</a>
-        </div>
-      </div>
     </div>
-  </footer>
+</section>
 
-  <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <a href="https://wa.me/5562984636597" target="_blank" rel="noopener noreferrer" class="whatsapp-float" id="btn-whatsapp-float" aria-label="Falar pelo WhatsApp">
+<!-- DOCTORALIA / AGENDAMENTO -->
+<section id="doctoralia" class="section scroll-fade">
+    <div class="container">
+        <div class="section-title">
+            <span>AGENDAMENTO ON-LINE</span>
+            <h2>Marque sua Teleconsulta no Doctoralia</h2>
+            <p>Escolha o melhor dia e horário diretamente no calendário abaixo.</p>
+        </div>
+        <!-- Widget / Card Doctoralia -->
+        <div class="doctoralia-card">
+            <div class="doc-info-top">
+                <img src="foto-individual.jpg" alt="Dr. Gabriel Vinícius">
+                <div>
+                    <h3>Dr. Gabriel Vinícius <i class="fas fa-check-circle text-primary"></i></h3>
+                    <p>Médico clínico geral</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>12 opiniões</span>
+                    </div>
+                </div>
+            </div>
+            <p><i class="fas fa-video"></i> Oferece teleconsulta</p>
+            <a href="#" class="btn-primary">Agendar consulta</a>
+        </div>
+    </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="section scroll-fade">
+    <div class="container">
+        <div class="section-title">
+            <h2>O que dizem os pacientes</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Muito competente, atencioso e excelente profissional!"</p>
+                <span>- Diego Santos</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section scroll-fade">
+    <div class="container">
+        <div class="section-title">
+            <h2>Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Como funciona a teleconsulta?</h3>
+                <p>A consulta é realizada por videochamada de forma segura e você recebe todas as orientações, receitas e atestados digitalmente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5562999999999" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
-    <span class="float-tooltip">Falar no WhatsApp</span>
-  </a>
+</a>
 
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
+<!-- FOOTER / RODAPÉ -->
+<footer>
+    <div class="container footer-content">
+        <p>&copy; 2026 Dr. Gabriel Vinícius. Todos os direitos reservados.</p>
+        <p>Desenvolvido para Telemedicina com excelência e segurança.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
