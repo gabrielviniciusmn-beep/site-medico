@@ -1,62 +1,50 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Inicializar Efeito de Rolagem (AOS)
-  AOS.init({
-    once: true,
-    offset: 50,
-    duration: 800,
-    easing: 'ease-out-cubic'
-  });
+// --- MENU RESPONSIVO ---
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-  // 1. Controle do Accordion do FAQ
-  const faqItems = document.querySelectorAll(".faq-item");
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+});
 
-  faqItems.forEach((item) => {
-    const questionButton = item.querySelector(".faq-question");
-
-    questionButton.addEventListener("click", () => {
-      const isActive = item.classList.contains("active");
-
-      // Fecha todos os outros itens
-      faqItems.forEach((otherItem) => {
-        otherItem.classList.remove("active");
-        const otherAnswer = otherItem.querySelector(".faq-answer");
-        if (otherAnswer) otherAnswer.style.maxHeight = null;
-      });
-
-      // Abre ou fecha o item clicado
-      if (!isActive) {
-        item.classList.add("active");
-        const answer = item.querySelector(".faq-answer");
-        if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
-      }
+// Fecha o menu ao clicar em um link (opcional, mas recomendado)
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
     });
-  });
+});
 
-  // 2. Controle do Menu Hambúrguer Mobile
-  const menuToggle = document.getElementById("menuToggle");
-  const navMenu = document.getElementById("navMenu");
-  const navLinks = navMenu ? navMenu.querySelectorAll("a") : [];
+// --- FAQ ACORDEÃO ---
+const faqQuestions = document.querySelectorAll('.faq-question');
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-      const icon = menuToggle.querySelector("i");
-      if (icon) {
-        if (navMenu.classList.contains("open")) {
-          icon.className = "fas fa-times";
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const parent = question.parentElement;
+        
+        // Fecha outros itens abertos (opcional, remova se quiser manter vários abertos)
+        document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== parent) {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.maxHeight = null;
+            }
+        });
+
+        // Alterna o estado do item atual
+        parent.classList.toggle('active');
+        const answer = parent.querySelector('.faq-answer');
+        
+        if (parent.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
         } else {
-          icon.className = "fas fa-bars";
+            answer.style.maxHeight = null;
         }
-      }
     });
+});
 
-    // Fecha o menu ao clicar em qualquer link da lista
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-        const icon = menuToggle.querySelector("i");
-        if (icon) icon.className = "fas fa-bars";
-      });
+// --- INICIALIZAÇÃO DO AOS (ANIMAÇÕES) ---
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        once: true, // As animações ocorrem apenas uma vez
+        offset: 50, // Distância do trigger
+        duration: 800 // Duração padrão
     });
-  }
 });
