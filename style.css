@@ -16,12 +16,6 @@
   --transition-fast: 0.25s ease;
 }
 
-/* Seleção de texto refinada (toque premium) */
-::selection {
-  background-color: var(--primary-color);
-  color: #ffffff;
-}
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -58,7 +52,6 @@ header {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   padding: 16px 0;
@@ -286,13 +279,13 @@ nav a:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Transição ainda mais fluida */
+  transition: var(--transition-fast);
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-color: #7dd3fc; /* Borda levemente mais destacada e elegante */
+  border-color: #bae6fd;
 }
 
 .card-icon {
@@ -351,12 +344,6 @@ nav a:hover {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
-}
-
-.review-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: #e2e8f0;
 }
 
 .stars {
@@ -395,11 +382,6 @@ nav a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   overflow: hidden;
-  transition: var(--transition-fast);
-}
-
-.faq-item:hover {
-  border-color: #cbd5e1;
 }
 
 .faq-question {
@@ -743,10 +725,9 @@ nav a:hover {
     gap: 30px;
   }
 
-  /* Maior respiro para o widget do Doctoralia em celulares */
   .widget-container {
-    padding: 24px 14px;
-    border-radius: var(--radius-md);
+    padding: 15px 10px;
+    border-radius: var(--radius-sm);
   }
 
   .footer-top-grid {
