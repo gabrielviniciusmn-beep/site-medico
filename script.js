@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileCtaBar && doctoraliaSection) {
     window.addEventListener('scroll', () => {
       const rect = doctoraliaSection.getBoundingClientRect();
-      // Se a seção da Doctoralia estiver visível na tela, esconde a barra fixa para não sobrepor os horários
       if (rect.top <= window.innerHeight && rect.bottom >= 0) {
         mobileCtaBar.classList.add('hidden');
       } else {
