@@ -643,6 +643,13 @@ nav a:hover {
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
   z-index: 999;
   text-align: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-cta-bar.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .mobile-cta-bar .btn-primary {
@@ -678,6 +685,11 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
+  /* Oculta o botão duplicado no topo em celulares para maior elegância */
+  .hero .cta-group {
+    display: none;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -724,7 +736,7 @@ nav a:hover {
   }
 
   .hero {
-    padding: 100px 0 50px 0;
+    padding: 100px 0 40px 0;
   }
 
   .hero-text h1 {
@@ -735,7 +747,7 @@ nav a:hover {
 
   .hero-subtitle {
     font-size: 0.98rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .badge {
@@ -745,7 +757,7 @@ nav a:hover {
   }
 
   .hero-container {
-    gap: 30px;
+    gap: 20px;
   }
 
   .widget-container {
