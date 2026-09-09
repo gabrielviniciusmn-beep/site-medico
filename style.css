@@ -1,19 +1,22 @@
 :root {
-  --primary-color: #0284c7;
-  --primary-dark: #0369a1;
+  --primary-color: #0f2942;
+  --primary-dark: #0a1c30;
   --secondary-color: #0f172a;
-  --accent-color: #22c55e;
+  --accent-color: #c9a35d;
+  --accent-dark: #a9813f;
   --text-main: #334155;
   --text-light: #64748b;
   --bg-body: #ffffff;
-  --bg-light: #f8fafc;
-  --border-color: #e2e8f0;
+  --bg-light: #f8f7f4;
+  --border-color: #e5e1d8;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 20px;
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 6px -1px rgba(15, 41, 66, 0.06), 0 2px 4px -2px rgba(15, 41, 66, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(15, 41, 66, 0.10), 0 4px 6px -4px rgba(15, 41, 66, 0.10);
   --transition-fast: 0.25s ease;
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
 *, *::before, *::after {
@@ -28,7 +31,7 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-body);
   color: var(--text-main);
   background-color: var(--bg-body);
   line-height: 1.6;
@@ -70,15 +73,15 @@ header {
 }
 
 .logo-title {
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.2rem;
   color: var(--secondary-color);
 }
 
 .logo-sub {
   font-size: 0.75rem;
-  color: var(--primary-color);
+  color: var(--accent-dark);
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -99,7 +102,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--primary-color);
+  color: var(--accent-dark);
 }
 
 .menu-toggle {
@@ -114,7 +117,7 @@ nav a:hover {
 
 .hero {
   padding: 160px 0 100px 0;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #0f2942 0%, #16344f 100%);
 }
 
 .hero-container {
@@ -128,8 +131,9 @@ nav a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #bae6fd;
-  color: #0369a1;
+  background-color: rgba(201, 163, 93, 0.15);
+  border: 1px solid rgba(201, 163, 93, 0.4);
+  color: #e8cd94;
   padding: 6px 14px;
   border-radius: 50px;
   font-size: 0.82rem;
@@ -138,17 +142,17 @@ nav a:hover {
 }
 
 .hero-text h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: var(--secondary-color);
+  font-family: var(--font-heading);
+  font-size: 2.9rem;
+  font-weight: 600;
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
 .hero-subtitle {
   font-size: 1.08rem;
-  color: var(--text-light);
+  color: #cbd5e1;
   line-height: 1.7;
   margin-bottom: 30px;
   font-weight: 400;
@@ -163,18 +167,19 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: var(--primary-color);
-  color: #ffffff;
+  background-color: var(--accent-color);
+  color: #0f172a;
   padding: 14px 28px;
   border-radius: var(--radius-sm);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  box-shadow: 0 4px 12px rgba(201, 163, 93, 0.35);
   transition: var(--transition-fast);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--accent-dark);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -203,6 +208,35 @@ nav a:hover {
   display: block;
 }
 
+/* --- FAIXA DE SELOS DE CONFIANÇA --- */
+.trust-bar {
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-color);
+  padding: 28px 0;
+}
+
+.trust-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.trust-item i {
+  color: var(--accent-dark);
+  font-size: 1.1rem;
+}
+
 .section {
   padding: 90px 0;
 }
@@ -218,7 +252,7 @@ nav a:hover {
 }
 
 .section-tag {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -228,9 +262,9 @@ nav a:hover {
 }
 
 .section-header h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 12px;
 }
@@ -248,14 +282,15 @@ nav a:hover {
 }
 
 .sobre-card h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 6px;
 }
 
 .crm-info {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: 24px;
@@ -285,14 +320,14 @@ nav a:hover {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-color: #bae6fd;
+  border-color: rgba(201, 163, 93, 0.4);
 }
 
 .card-icon {
   width: 50px;
   height: 50px;
-  background-color: #f0f9ff;
-  color: var(--primary-color);
+  background-color: #f0ece1;
+  color: var(--accent-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,8 +337,9 @@ nav a:hover {
 }
 
 .card h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 12px;
 }
@@ -347,7 +383,7 @@ nav a:hover {
 }
 
 .stars {
-  color: #f59e0b;
+  color: var(--accent-color);
   font-size: 0.9rem;
   margin-bottom: 15px;
   display: flex;
@@ -365,7 +401,7 @@ nav a:hover {
 .review-author {
   font-weight: 700;
   font-size: 0.85rem;
-  color: var(--primary-color);
+  color: var(--accent-dark);
   display: block;
 }
 
@@ -390,7 +426,7 @@ nav a:hover {
   background: none;
   border: none;
   text-align: left;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   color: var(--secondary-color);
@@ -402,7 +438,7 @@ nav a:hover {
 }
 
 .faq-question i {
-  color: var(--primary-color);
+  color: var(--accent-dark);
   transition: transform var(--transition-fast);
 }
 
@@ -428,11 +464,11 @@ nav a:hover {
 }
 
 .footer-professional {
-  background-color: #0f172a;
+  background-color: #0a1c30;
   color: #94a3b8;
   padding: 70px 0 30px 0;
   font-size: 0.9rem;
-  border-top: 3px solid var(--primary-color);
+  border-top: 3px solid var(--accent-color);
 }
 
 .footer-top-grid {
@@ -443,15 +479,15 @@ nav a:hover {
 }
 
 .footer-brand-name {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #ffffff;
   display: block;
 }
 
 .footer-spec {
-  color: #38bdf8;
+  color: #d9b978;
   font-weight: 600;
   font-size: 0.85rem;
   margin-bottom: 12px;
@@ -471,7 +507,7 @@ nav a:hover {
 }
 
 .footer-badge-crm i {
-  color: #38bdf8;
+  color: #d9b978;
 }
 
 .footer-bio-short {
@@ -494,7 +530,7 @@ nav a:hover {
   bottom: -6px;
   width: 30px;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
 }
 
 .footer-links {
@@ -519,7 +555,7 @@ nav a:hover {
 
 .footer-links a i {
   font-size: 0.7rem;
-  color: var(--primary-color);
+  color: var(--accent-color);
   transition: transform var(--transition-fast);
 }
 
@@ -547,7 +583,7 @@ nav a:hover {
 }
 
 .icon-trust {
-  color: #22c55e;
+  color: var(--accent-color);
   font-size: 0.95rem;
 }
 
@@ -561,11 +597,11 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.25);
+  background-color: rgba(201, 163, 93, 0.1);
+  border: 1px solid rgba(201, 163, 93, 0.3);
   padding: 12px 16px;
   border-radius: var(--radius-sm);
-  color: #22c55e;
+  color: #d9b978;
 }
 
 .footer-security-badge i {
@@ -592,7 +628,7 @@ nav a:hover {
 
 .footer-disclaimer {
   background-color: rgba(0, 0, 0, 0.25);
-  border-left: 3px solid var(--primary-color);
+  border-left: 3px solid var(--accent-color);
   padding: 14px 18px;
   border-radius: 4px;
   margin-bottom: 25px;
@@ -656,7 +692,7 @@ nav a:hover {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 4px 10px rgba(201, 163, 93, 0.3);
 }
 
 @media (max-width: 992px) {
@@ -681,6 +717,11 @@ nav a:hover {
   .footer-top-grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+
+  .trust-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16px;
   }
 }
 
@@ -740,7 +781,7 @@ nav a:hover {
   }
 
   .hero-text h1 {
-    font-size: 1.85rem;
+    font-size: 1.95rem;
     line-height: 1.25;
     margin-bottom: 18px;
   }
@@ -781,5 +822,14 @@ nav a:hover {
 
   body {
     padding-bottom: 70px;
+  }
+
+  .trust-bar-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .trust-item {
+    justify-content: flex-start;
   }
 }
