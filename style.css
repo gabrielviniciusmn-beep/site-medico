@@ -629,6 +629,29 @@ nav a:hover {
   color: #94a3b8;
 }
 
+/* --- BARRA DE CTA FIXA PARA MOBILE --- */
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+  padding: 12px 20px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  text-align: center;
+}
+
+.mobile-cta-bar .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+}
+
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -738,5 +761,13 @@ nav a:hover {
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+
+  .mobile-cta-bar {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 70px;
   }
 }
