@@ -1,50 +1,63 @@
-// --- MENU RESPONSIVO ---
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
+document.addEventListener('DOMContentLoaded', () => {
+  // Controle do menu mobile (hambúrguer)
+  const menuToggle = document.getElementById('menuToggle');
+  const navMenu = document.getElementById('navMenu');
 
-menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-});
-
-// Fecha o menu ao clicar em um link (opcional, mas recomendado)
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
     });
-});
 
-// --- FAQ ACORDEÃO ---
-const faqQuestions = document.querySelectorAll('.faq-question');
+    // Fecha o menu ao clicar em qualquer link
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+  }
 
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const parent = question.parentElement;
-        
-        // Fecha outros itens abertos (opcional, remova se quiser manter vários abertos)
-        document.querySelectorAll('.faq-item').forEach(item => {
-            if (item !== parent) {
-                item.classList.remove('active');
-                item.querySelector('.faq-answer').style.maxHeight = null;
-            }
+  // Controle interativo do FAQ (Acordeão)
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const questionButton = item.querySelector('.faq-question');
+    const answerDiv = item.querySelector('.faq-answer');
+
+    if (questionButton && answerDiv) {
+      questionButton.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+
+        // Fecha todos os outros itens
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          if (otherAnswer) {
+            otherAnswer.style.maxHeight = null;
+          }
         });
 
-        // Alterna o estado do item atual
-        parent.classList.toggle('active');
-        const answer = parent.querySelector('.faq-answer');
-        
-        if (parent.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + "px";
-        } else {
-            answer.style.maxHeight = null;
+        // Alterna o item atual se não estava aberto
+        if (!isOpen) {
+          item.classList.add('active');
+          answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
         }
-    });
-});
+      });
+    }
+  });
 
-// --- INICIALIZAÇÃO DO AOS (ANIMAÇÕES) ---
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-        once: true, // As animações ocorrem apenas uma vez
-        offset: 50, // Distância do trigger
-        duration: 800 // Duração padrão
+  // Ocultar automaticamente a barra fixa mobile ao chegar na seção da Doctoralia
+  const mobileCtaBar = document.querySelector('.mobile-cta-bar');
+  const doctoraliaSection = document.getElementById('doctoralia');
+
+  if (mobileCtaBar && doctoraliaSection) {
+    window.addEventListener('scroll', () => {
+      const rect = doctoraliaSection.getBoundingClientRect();
+      // Se a seção da Doctoralia estiver visível na tela, esconde a barra fixa para não sobrepor os horários
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        mobileCtaBar.classList.add('hidden');
+      } else {
+        mobileCtaBar.classList.remove('hidden');
+      }
     });
+  }
 });
